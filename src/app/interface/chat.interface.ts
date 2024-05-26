@@ -27,7 +27,7 @@ export interface MessageData {
   message: string;
   publishedTimestamp: number;
   userId: string;
-  channelId?: string;
-  chatId?: string;
+  channelId: string;
+  chatId: string;
   edited: boolean;
 }

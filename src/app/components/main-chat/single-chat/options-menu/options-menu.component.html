@@ -24,15 +24,6 @@
       (click)="addReactionIcon('clap-hands', currentChat)"
     >
     </app-small-btn>
-    <app-small-btn
-      [imgSrc]="'add-reaction.svg'"
-      [imgSize]="viewWidth >= RESPONSIVE_THRESHOLD_MOBILE ? '24px' : '17px'"
-      [btnSize]="viewWidth >= RESPONSIVE_THRESHOLD_MOBILE ? '36px' : '25px'"
-      [btnBgHoverColor]="'#edeefe'"
-      [ngClass]="{ mirror: user.id === userService.getCurrentUserId() }"
-      (click)="toggleEmojiPicker()"
-    >
-    </app-small-btn>
     @if (!isPrivatChannel) {
     <app-small-btn
       [imgSrc]="'answer.svg'"
@@ -81,13 +72,25 @@
   } @else {
   <div class="content">
     <app-small-btn
-      [imgSrc]="'add-reaction.svg'"
+      [imgSrc]="'okay.svg'"
       [imgSize]="viewWidth >= RESPONSIVE_THRESHOLD_MOBILE ? '24px' : '17px'"
       [btnSize]="viewWidth >= RESPONSIVE_THRESHOLD_MOBILE ? '36px' : '25px'"
+      [imgFilter]="'none'"
       [btnBgHoverColor]="'#edeefe'"
       [ngClass]="{ mirror: user.id === userService.getCurrentUserId() }"
-      (click)="toggleEmojiPicker()"
-    ></app-small-btn>
+      (click)="addReactionIcon('okay', currentChat)"
+    >
+    </app-small-btn>
+    <app-small-btn
+      [imgSrc]="'clap-hands.svg'"
+      [imgSize]="viewWidth >= RESPONSIVE_THRESHOLD_MOBILE ? '24px' : '17px'"
+      [btnSize]="viewWidth >= RESPONSIVE_THRESHOLD_MOBILE ? '36px' : '25px'"
+      [imgFilter]="'none'"
+      [btnBgHoverColor]="'#edeefe'"
+      [ngClass]="{ mirror: user.id === userService.getCurrentUserId() }"
+      (click)="addReactionIcon('clap-hands', currentChat)"
+    >
+    </app-small-btn>
     @if (user.id === userService.getCurrentUserId()) {
     <app-small-btn
       [imgSrc]="'more-vertical.svg'"
