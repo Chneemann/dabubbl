@@ -5,6 +5,7 @@ import {
   ElementRef,
   HostListener,
   OnChanges,
+  OnInit,
   SimpleChanges,
 } from '@angular/core';
 import { HeaderComponent } from '../../shared/components/header/header.component';
@@ -39,13 +40,13 @@ import { SharedService } from '../../service/shared.service';
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
   constructor(
     public userService: UserService,
     public chatService: ChatService,
     public channelService: ChannleService,
-    private route: Router,
-    private router: ActivatedRoute,
+    private router: Router,
+    private route: ActivatedRoute,
     private elementRef: ElementRef,
     public toggleAllBooleans: ToggleBooleanService,
     private sharedService: SharedService
@@ -68,7 +69,9 @@ export class MainComponent {
    */
   ifUserLogin() {
     if (this.userService.getCurrentUserId() === null) {
-      this.route.navigateByUrl('/login');
+      setTimeout(() => {
+        this.router.navigate(['/login']);
+      }, 0);
     }
   }
 
@@ -76,8 +79,8 @@ export class MainComponent {
    * Subscribes to route params and updates the current channel.
    */
   routeUserId() {
-    if (this.router.params.subscribe()) {
-      this.router.params.subscribe((params) => {
+    if (this.route.params.subscribe()) {
+      this.route.params.subscribe((params) => {
         this.currentChannel = params['id'];
       });
     }

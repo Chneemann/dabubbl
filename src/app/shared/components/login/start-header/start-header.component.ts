@@ -40,6 +40,7 @@ export class StartHeaderComponent {
    * Initializes the component and decides whether to start animations based on the login service state.
    */
   ngOnInit(): void {
+    this.updateViewWidth();
     if (!this.loginService.getAnimationState()) {
       this.triggerAnimations();
     } else {
