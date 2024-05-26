@@ -12,6 +12,4 @@ import { ToggleBooleanService } from './service/toggle-boolean.service';
 })
 export class AppComponent {
   title = 'dabubble';
-
-  constructor(public toggleAllBooleans:ToggleBooleanService){}
 }

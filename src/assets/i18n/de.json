@@ -12,7 +12,11 @@
     "topText": "Neu bei DABubble?",
     "topText2": "Konto erstellen",
     "errorText": "*Email ist erforderlich.",
-    "errorText2": "*Passwort ist erforderlich."
+    "errorText2": "*Passwort ist erforderlich.",
+    "errorText3": "*Ungültige Anmeldeinformationen.",
+    "errorText4": "*Zuviele fehlgeschlagener Anmeldeversuche.",
+    "errorText5": "*Bitte Überprüfe deine Eingaben.",
+    "errorText6": "*Bitte versuchen Sie es später erneut."
   },
 
   "createAccount": {

@@ -10,6 +10,8 @@ import { User } from '../interface/user.interface';
 import { ChannleService } from './channle.service';
 import { getAuth, signOut } from 'firebase/auth';
 import { Router } from '@angular/router';
+import CryptoJS from 'crypto-es';
+import { CryptoJSSecretKey } from './../../environments/config';
 
 @Injectable({
   providedIn: 'root',
@@ -22,6 +24,7 @@ export class UserService implements OnDestroy {
   getUserIDs: string[] = [];
   getFiltertUsers: User[] = [];
   isUserLogin: boolean = true;
+  private secretKey: string = CryptoJSSecretKey.secretKey;
 
   unsubUser;
 
@@ -34,10 +37,13 @@ export class UserService implements OnDestroy {
    * @returns {string|number|undefined} The ID of the current user if found in local storage, otherwise undefined.
    */
   getCurrentUserId() {
-    let currentUser = localStorage.getItem('currentUserDABubble');
-    if (currentUser !== null) {
-      return JSON.parse(currentUser);
+    const encryptedValue = localStorage.getItem('currentUserDABUBBLE');
+    if (encryptedValue) {
+      const bytes = CryptoJS.AES.decrypt(encryptedValue, this.secretKey);
+      const decryptedValue = bytes.toString(CryptoJS.enc.Utf8);
+      return JSON.parse(decryptedValue);
     }
+    return null;
   }
 
   /**
@@ -162,7 +168,8 @@ export class UserService implements OnDestroy {
    * Deletes the user ID from local storage.
    */
   deleteUserIdInLocalStorage() {
-    localStorage.removeItem('currentUserDABubble');
+    localStorage.removeItem('currentUserDABUBBLE');
+    localStorage.removeItem('sessionTimeDABUBBLE');
   }
 
   /**

@@ -67,7 +67,7 @@ export class MainComponent {
    * Checks if the user is logged in.
    */
   ifUserLogin() {
-    if (this.userService.getCurrentUserId() === undefined) {
+    if (this.userService.getCurrentUserId() === null) {
       this.route.navigateByUrl('/login');
     }
   }

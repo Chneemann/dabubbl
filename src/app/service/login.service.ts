@@ -11,7 +11,6 @@ import {
   updateDoc,
   where,
 } from '@angular/fire/firestore';
-// import { User } from '../interface/user.interface';
 import {
   getAuth,
   signInWithPopup,
@@ -23,7 +22,9 @@ import { Router } from '@angular/router';
 import { User } from '../interface/user.interface';
 import { UserService } from './user.service';
 import { publicChannels } from '../interface/channel.interface';
-// import { User } from 'firebase/auth';
+import { TranslateService } from '@ngx-translate/core';
+import CryptoJS from 'crypto-es';
+import { CryptoJSSecretKey } from './../../environments/config';
 
 @Injectable({
   providedIn: 'root',
@@ -43,8 +44,13 @@ export class loginService {
   passwordIcon: string = './assets/img/login/close-eye.svg';
   private hasAnimationPlayed = false;
   private introCompleteStatus = false;
+  private secretKey: string = CryptoJSSecretKey.secretKey;
 
-  constructor(private router: Router, private userService: UserService) {
+  constructor(
+    private router: Router,
+    private userService: UserService,
+    private translate: TranslateService
+  ) {
     this.ifUserLoggedIn();
   }
 
@@ -54,7 +60,7 @@ export class loginService {
    * @returns {void}
    */
   ifUserLoggedIn() {
-    let currentUser = localStorage.getItem('currentUserDABubble');
+    let currentUser = this.userService.getCurrentUserId();
     if (currentUser !== null) {
       this.router.navigate([`/main`]);
     }
@@ -78,7 +84,7 @@ export class loginService {
         getDocs(querySnapshot)
           .then((snapshot) => this.userDocument(snapshot))
           .catch((error) => {
-            console.error('Fehler beim Abrufen des Benutzerdokuments:', error);
+            console.error('Error when retrieving the user document:', error);
           });
       })
       .catch((error) => {
@@ -99,7 +105,7 @@ export class loginService {
       this.email = '';
       this.password = '';
     } else {
-      console.error('Kein zugehöriges Benutzerdokument gefunden.');
+      console.error('No associated user document found.');
     }
   }
 
@@ -110,15 +116,19 @@ export class loginService {
   switchCase(errorCode: string) {
     switch (errorCode) {
       case 'auth/invalid-credential':
-        this.errorMessage =
-          '*Ungültige Anmeldeinformationen. Bitte überprüfen Sie Ihre Eingaben.';
+        this.translate.get('login.errorText3').subscribe((res: string) => {
+          this.errorMessage = res;
+        });
         break;
       case 'auth/too-many-requests':
-        this.errorMessage =
-          '*Der Zugriff auf dieses Konto wurde aufgrund zahlreicher fehlgeschlagener Anmeldeversuche vorübergehend deaktiviert.';
+        this.translate.get('login.errorText4').subscribe((res: string) => {
+          this.errorMessage = res;
+        });
         break;
       default:
-        this.errorMessage = '*Bitte Überprüfe deine Eingaben.';
+        this.translate.get('login.errorText5').subscribe((res: string) => {
+          this.errorMessage = res;
+        });
         break;
     }
   }
@@ -142,8 +152,9 @@ export class loginService {
       })
       .catch((error) => {
         console.error(error);
-        this.errorMessage =
-          'Fehler bei der Gastanmeldung. Bitte versuchen Sie es später erneut.';
+        this.translate.get('login.errorText6').subscribe((res: string) => {
+          this.errorMessage = res;
+        });
       });
   }
 
@@ -363,7 +374,7 @@ export class loginService {
         talkToUserId: currentUser,
       });
     } catch (error) {
-      console.error('Fehler beim Erstellen des privaten Kanals: ', error);
+      console.error('Error when creating the private channel: ', error);
     }
   }
 
@@ -371,8 +382,16 @@ export class loginService {
    * Stores the current user's ID in the local storage.
    * @param {string} userId - The ID of the current user to be stored.
    */
-  async getUserIdInLocalStorage(userId: string) {
-    localStorage.setItem('currentUserDABubble', JSON.stringify(userId));
+  async getUserIdInLocalStorage(userId: string): Promise<void> {
+    const encryptedValue = CryptoJS.AES.encrypt(
+      JSON.stringify(userId),
+      this.secretKey
+    ).toString();
+    localStorage.setItem('currentUserDABUBBLE', encryptedValue);
+    localStorage.setItem(
+      'sessionTimeDABUBBLE',
+      new Date().getTime().toString()
+    );
     await this.updateUserOnlineStatus(userId);
     window.location.reload();
   }
