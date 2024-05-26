@@ -52,14 +52,6 @@
   }
 }
 
-.dieableEdit {
-  color: rgba(0, 0, 0, 0.5) !important;
-  cursor: context-menu !important;
-  &:hover {
-    font-weight: 400 !important;
-  }
-}
-
 .closeBtn {
   display: flex;
   justify-content: center;

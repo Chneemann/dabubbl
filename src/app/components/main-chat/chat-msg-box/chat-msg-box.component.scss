@@ -47,10 +47,11 @@ section {
   }
 }
 
-.sendIconDisabled{
+.sendIconDisabled {
   padding: 6px;
   transform: 0.3 ease-in-out;
-  filter: brightness(0) saturate(100%) invert(78%) sepia(4%) saturate(4098%) hue-rotate(207deg) brightness(99%) contrast(98%);
+  filter: brightness(0) saturate(100%) invert(78%) sepia(4%) saturate(4098%)
+    hue-rotate(207deg) brightness(99%) contrast(98%);
 }
 
 .verticalLine {
@@ -86,7 +87,7 @@ app-emoji-picker {
   z-index: 3;
 }
 
-.posiotionDataFromPc {
+.positionDataFromPc {
   margin-top: -40px;
   display: flex;
   width: 60px;
@@ -114,7 +115,7 @@ app-emoji-picker {
   height: 100vh;
 }
 
-.showWanrningNotice {
+.showWarningNotice {
   animation: shwoWN 0.3s ease-in-out;
 }
 
@@ -176,7 +177,7 @@ app-emoji-picker {
   display: flex;
 }
 
-.warningMessage{
+.warningMessage {
   color: red;
 }
 
@@ -234,8 +235,8 @@ app-emoji-picker {
     padding-bottom: 54px;
     margin: 12px;
   }
-  
-  .warningMessage{
+
+  .warningMessage {
     font-size: 12px;
   }
 }

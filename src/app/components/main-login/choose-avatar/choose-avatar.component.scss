@@ -3,8 +3,8 @@
   font-family: Nunito;
 }
 
-.avatarSektion {
-  @include SektionBody;
+section {
+  @include SectionBody;
 }
 .avatarContainer {
   @include Card;

@@ -27,11 +27,6 @@ export class EditUserComponent {
 
   constructor(public userService: UserService) {}
 
-  /** Toggles the side menu. */
-  showSideMenu() {
-    this.openEditUserValue = !this.openEditUserValue;
-  }
-
   /** Opens the edit user section. */
   openEditUser() {
     this.openEditUserValue = true;

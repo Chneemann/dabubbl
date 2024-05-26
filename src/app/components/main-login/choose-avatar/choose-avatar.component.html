@@ -1,4 +1,4 @@
-<div class="avatarSektion">
+<section>
   <app-start-header [display]="'none'"></app-start-header>
   <div class="avatarContainer">
     <div class="avatarTop">
@@ -11,7 +11,7 @@
         >
         </app-small-btn>
       </div>
-      <span>{{ 'chooseAvatar.header' | translate }}</span>
+      <span>{{ "chooseAvatar.header" | translate }}</span>
     </div>
 
     <div class="viewAvatarContainer">
@@ -29,7 +29,9 @@
       />
     </div>
     <div class="chooseAvatarContainer">
-      <div><span>{{ 'chooseAvatar.avatarInfo' | translate }}</span></div>
+      <div>
+        <span>{{ "chooseAvatar.avatarInfo" | translate }}</span>
+      </div>
       <div class="mobileImgContainer">
         <img
           (click)="chooseExistAvatar(i)"
@@ -41,17 +43,19 @@
     </div>
 
     <div class="ownAvatarContainer">
-      <div>{{ 'chooseAvatar.ownAvatar' | translate }}</div>
+      <div>{{ "chooseAvatar.ownAvatar" | translate }}</div>
       <div>
         <button class="BtnUpload" (click)="fileInput.click()">
-          {{ 'chooseAvatar.avatarBtn' | translate }}
+          {{ "chooseAvatar.avatarBtn" | translate }}
         </button>
       </div>
     </div>
 
     <div class="avatarBottom">
-      <button class="hoverBtn" (click)="loginService.register()">{{ 'chooseAvatar.Btn' | translate }}</button>
+      <button class="hoverBtn" (click)="loginService.register()">
+        {{ "chooseAvatar.Btn" | translate }}
+      </button>
     </div>
   </div>
   <app-footer></app-footer>
-</div>
+</section>

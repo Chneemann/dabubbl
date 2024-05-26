@@ -77,11 +77,11 @@ export class ChooseAvatarComponent {
             this.loginService.getAvatarUrl(url);
           })
           .catch((error) =>
-            console.error('Fehler beim Abrufen der Download-URL:', error)
+            console.error('Error retrieving the download URL:', error)
           );
       })
       .catch((error) => {
-        console.error('Fehler beim Hochladen:', error);
+        console.error('Upload error:', error);
       });
   }
 

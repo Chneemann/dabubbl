@@ -1,5 +1,5 @@
 <section (mouseleave)="mouseLeave()">
-  <div [ngClass]="{ posiotionDataFromPc: hasFile, '': !hasFile }">
+  <div [ngClass]="{ positionDataFromPc: hasFile, '': !hasFile }">
     @if(hasFile){
     <div
       class="fileBox"
@@ -83,7 +83,7 @@
       } @if(downloadFilesService.uploadFiles.length >= 1){
       <p
         [ngClass]="{
-          showWanrningNotice: downloadFilesService.uploadFiles.length >= 1
+          showWarningNotice: downloadFilesService.uploadFiles.length >= 1
         }"
         class="warningMessage"
       >

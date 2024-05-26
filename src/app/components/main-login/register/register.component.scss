@@ -1,6 +1,6 @@
 @import "../../../shared/components/login/mixins/mixin.scss";
-.registerSektion {
-  @include SektionBody;
+section {
+  @include SectionBody;
 }
 .registerContainer {
   @include Card;
