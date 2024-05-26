@@ -3,7 +3,6 @@
     type="text"
     maxlength="24"
     placeholder="{{ 'search-bar.placeholder' | translate }}"
-    class="fontNunito"
     [(ngModel)]="inputValue"
     (keyup)="filterAllInfo(inputValue)"
   />
@@ -17,9 +16,9 @@
   >
     <!-----Search output------>
     @if (filteredUsers.length > 0 && inputValue != '') {
-    <div class="contantBox">
-      <h4>{{ 'search-bar-header.user' | translate }}:</h4>
-      <div class="ansersBox">
+    <div class="contentBox">
+      <h4>{{ "search-bar-header.user" | translate }}:</h4>
+      <div class="answersBox">
         @for (user of filteredUsers; track user) {
         <div
           class="userDiv"
@@ -43,9 +42,9 @@
       </div>
     </div>
     } @if (filteredChannels.length > 0 && inputValue != '') {
-    <div class="contantBox">
-      <h4>{{ 'search-bar-header.channels' | translate }}:</h4>
-      <div class="ansersBox">
+    <div class="contentBox">
+      <h4>{{ "search-bar-header.channels" | translate }}:</h4>
+      <div class="answersBox">
         @for (channel of filteredChannels; track channel) {
         <p
           class="channelName"
@@ -59,15 +58,15 @@
       </div>
     </div>
     } @if (filteredChats.length > 0 && inputValue != '') {
-    <div class="contantBoxChats">
-      <h4>{{ 'search-bar-header.thread' | translate }}:</h4>
+    <div class="contentBoxChats">
+      <h4>{{ "search-bar-header.thread" | translate }}:</h4>
       <div class="channelAnswers">
         @for (chat of filteredChats; track chat) {
-        <div class="ansersBoxChats">
+        <div class="answersBoxChats">
           <p class="threadNmae">[ {{ getChannel(chat.channelId) }} ]</p>
-          <div class="threadContetntBox">
+          <div class="threadContentBox">
             <p
-              class="threadContetnt"
+              class="threadContent"
               [innerHTML]="chat.message | highlight : inputValue"
               routerLink="/main/{{ chat.channelId }}"
               (click)="closeSecondaryChatAndSidebar()"
@@ -80,7 +79,7 @@
     } @if ((filteredUsers.length === 0 && inputValue != '') &&
     (filteredChannels.length === 0 && inputValue != '') && (filteredChats.length
     === 0 && inputValue != '')) {
-    <p class="threadContetnt">{{ "search-bar.errorMessage" | translate }}</p>
+    <p class="threadContent">{{ "search-bar.errorMessage" | translate }}</p>
     }
   </div>
 </div>

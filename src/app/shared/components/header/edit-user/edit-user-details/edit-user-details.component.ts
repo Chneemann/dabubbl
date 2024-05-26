@@ -28,18 +28,18 @@ import { SmallBtnComponent } from '../../../small-btn/small-btn.component';
   styleUrl: './edit-user-details.component.scss',
 })
 export class EditUserDetailsComponent {
+  @Input() openEditUserValue!: boolean;
+  @Input() showCurrentProfile!: boolean;
+  @Output() closeEditWindow = new EventEmitter<boolean>();
+  @Output() saveUserData = new EventEmitter<boolean>();
+  @ViewChild('inputName') inputName!: ElementRef;
+  @ViewChild('inputEmail') inputEmail!: ElementRef;
+
   asGuestOnline: boolean = false;
   nameValueBoolean: boolean = false;
   emailValueBoolean: boolean = false;
   changedName: string = '';
   changedEmail: string = '';
-  @Input() openEditUserValue!: boolean;
-  @Input() showCurrentProfile!: boolean;
-  @ViewChild('inputName') inputName!: ElementRef;
-  @ViewChild('inputEmail') inputEmail!: ElementRef;
-
-  @Output() closeEditWindow = new EventEmitter<boolean>();
-  @Output() saveUserData = new EventEmitter<boolean>();
 
   constructor(
     public userService: UserService,

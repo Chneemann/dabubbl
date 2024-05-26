@@ -49,7 +49,7 @@
   padding: 32px;
 }
 
-.posiotionHeader {
+.positionHeader {
   @include displayFlex($j: space-between);
   width: 100%;
   p {
@@ -93,7 +93,7 @@ textarea {
     font-weight: 400;
     padding-top: 6px;
   }
-  .warning{
+  .warning {
     font-size: 18px;
     font-weight: 500;
     padding-top: 6px;
@@ -116,7 +116,7 @@ textarea {
 .btnBox {
   width: 100%;
   @include displayFlex($j: flex-end);
-  .furterBtnClass {
+  .enableBtn {
     width: 120px;
     height: 48px;
     background-color: white;
@@ -133,7 +133,7 @@ textarea {
   }
 }
 
-.smalWhiteBox {
+.smallWhiteBox {
   padding: 32px;
   width: 48vw;
   height: auto;
@@ -322,7 +322,7 @@ textarea {
     border-radius: 0;
   }
 
-  .smalWhiteBox {
+  .smallWhiteBox {
     position: absolute;
     bottom: 0;
     left: 0;

@@ -3,8 +3,8 @@
   overflow-x: hidden;
   overflow-y: hidden;
 }
-.loginSektion {
-  @include SektionBody;
+section {
+  @include SectionBody;
 }
 .loginContainer {
   @include Card;

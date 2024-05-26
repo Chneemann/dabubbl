@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ShowAllUsersComponent } from './show-all-users.component';
 
 describe('ShowAllUsersComponent', () => {
@@ -8,10 +7,9 @@ describe('ShowAllUsersComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ShowAllUsersComponent]
-    })
-    .compileComponents();
-    
+      imports: [ShowAllUsersComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(ShowAllUsersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

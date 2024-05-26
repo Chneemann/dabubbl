@@ -5,7 +5,6 @@ import { SidebarDirectMessagesComponent } from './sidebar-direct-messages/sideba
 import { SmallBtnComponent } from '../../shared/components/small-btn/small-btn.component';
 import { CommonModule } from '@angular/common';
 import { ChannleService } from '../../service/channle.service';
-import { SearchbarComponent } from './searchbar/searchbar.component';
 import { ToggleBooleanService } from '../../service/toggle-boolean.service';
 import { ChatService } from '../../service/chat.service';
 import { SharedService } from '../../service/shared.service';
@@ -19,7 +18,6 @@ import { SearchBarComponent } from '../../shared/components/header/search-bar/se
     SidebarDirectMessagesComponent,
     SmallBtnComponent,
     CommonModule,
-    SearchbarComponent,
     SearchBarComponent,
   ],
   templateUrl: './sidebar.component.html',

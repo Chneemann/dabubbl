@@ -18,12 +18,12 @@ import { SmallBtnComponent } from '../../small-btn/small-btn.component';
   styleUrl: './edit-user.component.scss',
 })
 export class EditUserComponent {
+  @Input() showCurrentProfile!: boolean;
+  @Output() testValueChange = new EventEmitter<boolean>();
+
   isOnline = true;
   openProfil = false;
   openEditUserValue = false;
-  @Input() showCurrentProfile!: boolean;
-
-  @Output() testValueChange = new EventEmitter<boolean>();
 
   constructor(public userService: UserService) {}
 

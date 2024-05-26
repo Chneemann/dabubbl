@@ -17,7 +17,7 @@
   <div>
     <div class="rightSide">
       @for(i of userService.getCurentUsers(); track i){
-      <p class="fontNunito">{{ i.firstName }} {{ i.lastName }}</p>
+      <p>{{ i.firstName }} {{ i.lastName }}</p>
 
       <div class="img" (click)="showSideMenu()">
         <img src="{{ i.avatar }}" class="profileImg" />
@@ -48,7 +48,7 @@
   [ngClass]="{ dBlock: openMenu, dNone: !openMenu }"
   (click)="showSideMenu()"
 >
-  <div class="whiteBox fontNunito">
+  <div class="whiteBox">
     <p (click)="showProfile()" class="profilBtn">
       {{ "login-header.profil" | translate }}
     </p>

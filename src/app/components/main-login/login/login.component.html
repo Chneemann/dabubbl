@@ -1,4 +1,4 @@
-<div class="loginSektion startIntroScrollProtect">
+<section class="startIntroScrollProtect">
   <app-start-header></app-start-header>
   <div class="loginContainer">
     <div class="loginTop">
@@ -32,7 +32,7 @@
           class="inputField"
           #passwordField="ngModel"
           minlength="6"
-          maxlength="16" 
+          maxlength="16"
           [(ngModel)]="this.loginService.password"
           name="password"
           [type]="loginService.passwordFieldType"
@@ -45,7 +45,12 @@
           cols="30"
           rows="10"
         />
-        <img class="passwordEye" (click)="loginService.togglePasswordVisibility()" [src]="loginService.passwordIcon" alt="Toggle visibility">
+        <img
+          class="passwordEye"
+          (click)="loginService.togglePasswordVisibility()"
+          [src]="loginService.passwordIcon"
+          alt="Toggle visibility"
+        />
         @if (!passwordField.valid && passwordField.touched) {
         <p class="error">{{ "login.errorText2" | translate }}</p>
         } @if (loginService.errorMessage) {
@@ -99,4 +104,4 @@
     </div>
   </div>
   <app-footer></app-footer>
-</div>
+</section>

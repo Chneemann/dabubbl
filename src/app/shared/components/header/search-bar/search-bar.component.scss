@@ -27,26 +27,26 @@
   background-color: white;
   box-shadow: rgb(79 98 117) 0px 20px 30px -10px;
   scrollbar-width: none;
-  overflow: scroll;
+  overflow: auto;
   -ms-overflow-style: none;
   display: flex;
   gap: 20px;
   flex-direction: column;
 }
-.contantBox {
+.contentBox {
   @include displayFlex($j: space-between, $a: flex-start);
   width: 100%;
   h4 {
     width: 30%;
   }
-  .ansersBox {
+  .answersBox {
     @include displayFlex($a: flex-start, $g: 4px);
     flex-direction: column;
     width: 70%;
   }
 }
 
-.contantBoxChats {
+.contentBoxChats {
   @include displayFlex($j: space-between, $a: flex-start);
   flex-direction: column;
   width: 100%;
@@ -54,15 +54,15 @@
     width: 100%;
     @include displayFlex($g: 4px);
     flex-direction: column;
-    .ansersBoxChats {
+    .answersBoxChats {
       width: 100%;
       @include displayFlex($j: space-between, $a: flex-start);
       .threadNmae {
         width: 30%;
       }
-      .threadContetntBox {
+      .threadContentBox {
         width: 70%;
-        .threadContetnt {
+        .threadContent {
           width: fit-content;
           padding: 4px;
           &:hover {
