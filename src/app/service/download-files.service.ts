@@ -1,4 +1,4 @@
-import { Injectable, Input, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import {
   getDownloadURL,
   getStorage,
@@ -23,7 +23,6 @@ export class DownloadFilesService {
   }
 
   loadAllFiles(docID: string) {
-    // lädt die fails in den firebase storage
     const storage = getStorage();
     for (const file of this.uploadFiles) {
       const storageRef = ref(storage, `chatFiles/${docID}/${file.name}`);
@@ -54,7 +53,6 @@ export class DownloadFilesService {
 
           downloadedFilesData.push({ id: folderID, files: folderFiles });
         }
-
         // Emit the updated value
         this.downloadedFiles.next(downloadedFilesData);
       })

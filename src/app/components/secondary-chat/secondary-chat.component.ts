@@ -1,6 +1,5 @@
 import {
   AfterViewChecked,
-  AfterViewInit,
   Component,
   ElementRef,
   Input,
@@ -10,12 +9,10 @@ import {
 import { UserService } from '../../service/user.service';
 import { ChannleService } from '../../service/channle.service';
 import { ChatService } from '../../service/chat.service';
-import { Channel } from '../../interface/channel.interface';
 import { MainComponent } from '../main/main.component';
 import { SingleChatComponent } from '../main-chat/single-chat/single-chat.component';
 import { Chat, ChatAnswers } from '../../interface/chat.interface';
 import { CommonModule } from '@angular/common';
-import { User } from '../../interface/user.interface';
 import { ChatMsgBoxComponent } from '../main-chat/chat-msg-box/chat-msg-box.component';
 import { TranslateModule } from '@ngx-translate/core';
 

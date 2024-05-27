@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { FooterComponent } from '../../../shared/components/login/footer/footer.component';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -21,7 +21,7 @@ import { TranslateModule } from '@ngx-translate/core';
     FooterComponent,
     RouterModule,
     SmallBtnComponent,
-    TranslateModule
+    TranslateModule,
   ],
   templateUrl: './password-reset.component.html',
   styleUrl: './password-reset.component.scss',
@@ -32,15 +32,11 @@ export class PasswordResetComponent {
   oobCode: string = '';
   private queryParamsSubscription: Subscription = new Subscription();
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-  ) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
-
-/**
- * Initializes the component by subscribing to query parameters.
- */
+  /**
+   * Initializes the component by subscribing to query parameters.
+   */
   ngOnInit(): void {
     this.queryParamsSubscription = this.route.queryParams.subscribe(
       (params) => {
@@ -49,20 +45,18 @@ export class PasswordResetComponent {
     );
   }
 
-
-/**
- * Handles the submission of the password reset form.
- * @param ngForm The form data of the password reset form.
- */
+  /**
+   * Handles the submission of the password reset form.
+   * @param ngForm The form data of the password reset form.
+   */
   onSubmit(ngForm: NgForm): void {
     this.resetPassword(ngForm);
   }
 
-
-/**
- * Performs the password reset operation using Firebase Authentication.
- * @param ngForm The form data of the password reset form.
- */
+  /**
+   * Performs the password reset operation using Firebase Authentication.
+   * @param ngForm The form data of the password reset form.
+   */
   resetPassword(ngForm: NgForm): void {
     const auth = getAuth();
     const newPassword = this.passwordRepeat;
@@ -76,19 +70,17 @@ export class PasswordResetComponent {
       });
   }
 
-
   /**
- * Cleans up the component by unsubscribing from the query parameters subscription.
- */
+   * Cleans up the component by unsubscribing from the query parameters subscription.
+   */
   ngOnDestroy(): void {
     this.queryParamsSubscription.unsubscribe();
   }
 
-
   /**
- * Checks if the entered passwords match.
- * @returns true if the password and repeated password are the same.
- */
+   * Checks if the entered passwords match.
+   * @returns true if the password and repeated password are the same.
+   */
   passwordsMatch(): boolean {
     return this.password === this.passwordRepeat;
   }

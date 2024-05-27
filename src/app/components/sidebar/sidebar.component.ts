@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { SidebarChannelsComponent } from './sidebar-channels/sidebar-channels.component';
 import { SidebarDirectMessagesComponent } from './sidebar-direct-messages/sidebar-direct-messages.component';
