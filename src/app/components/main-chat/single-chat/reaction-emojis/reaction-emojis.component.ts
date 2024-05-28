@@ -1,11 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  HostListener,
-  Input,
-  ViewChild,
-} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SmallBtnComponent } from '../../../../shared/components/small-btn/small-btn.component';
 import { CommonModule } from '@angular/common';
 import {
@@ -15,10 +8,8 @@ import {
 } from '../../../../interface/chat.interface';
 import { UserService } from '../../../../service/user.service';
 import { ChatService } from '../../../../service/chat.service';
-import { ChannleService } from '../../../../service/channle.service';
 import { EmojiPickerComponent } from '../../../../shared/components/emoji-picker/emoji-picker.component';
 import { EmojiComponent } from '@ctrl/ngx-emoji-mart/ngx-emoji';
-import { timeInterval } from 'rxjs';
 import { User } from '../../../../interface/user.interface';
 import { SharedService } from '../../../../service/shared.service';
 import { TranslateModule } from '@ngx-translate/core';
@@ -51,7 +42,6 @@ export class ReactionEmojisComponent {
   dialogY: number = 0;
 
   constructor(
-    private elementRef: ElementRef,
     public userService: UserService,
     private chatService: ChatService,
     private sharedService: SharedService

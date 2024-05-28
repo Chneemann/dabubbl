@@ -47,7 +47,6 @@ export class MainComponent implements OnInit {
     public channelService: ChannleService,
     private router: Router,
     private route: ActivatedRoute,
-    private elementRef: ElementRef,
     public toggleAllBooleans: ToggleBooleanService,
     private sharedService: SharedService
   ) {}

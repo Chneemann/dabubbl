@@ -57,7 +57,6 @@ export class MainChatComponent {
   openMenu: boolean = false;
   showProfil: boolean = false;
   talkToUser!: User[];
-  routToPrvCHannel: boolean = false;
 
   constructor(
     private route: Router,
@@ -297,7 +296,6 @@ export class MainChatComponent {
     if ('firstName' in element) {
       this.chatService.inputValue = `@${element.firstName} ${element.lastName}`;
       const getUserID = element.id!;
-      this.routToPrvCHannel = true;
       this.checkIfPrvChatExist(getUserID);
     } else {
       this.chatService.inputValue = `#${element.name}`;
