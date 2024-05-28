@@ -22,6 +22,7 @@ import { User } from '../../../interface/user.interface';
 import { MessageData } from '../../../interface/chat.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { Channel } from '../../../interface/channel.interface';
+import { SharedService } from '../../../service/shared.service';
 
 @Component({
   selector: 'app-chat-msg-box',
@@ -40,6 +41,7 @@ import { Channel } from '../../../interface/channel.interface';
 export class ChatMsgBoxComponent {
   @Input() currentChannel: string = '';
   @Input() target: string = '';
+  @Input() viewWidth: number = 0;
   @Output() newMsgEmitter: EventEmitter<boolean> = new EventEmitter<boolean>();
   @ViewChild('textarea') textAreaRef!: ElementRef;
 
@@ -68,8 +70,11 @@ export class ChatMsgBoxComponent {
     public userService: UserService,
     private chatService: ChatService,
     public channelService: ChannleService,
-    public toggleBoolean: ToggleBooleanService
+    public toggleBoolean: ToggleBooleanService,
+    private sharedService: SharedService
   ) {}
+
+  RESPONSIVE_THRESHOLD_MOBILE = this.sharedService.RESPONSIVE_THRESHOLD_MOBILE;
 
   /**
    * Handles the output from the emoji picker.
@@ -83,7 +88,12 @@ export class ChatMsgBoxComponent {
    * Select Textarea at onload.
    */
   ngAfterViewInit() {
-    this.textAreaRef.nativeElement.select();
+    if (
+      this.viewWidth != 0 &&
+      this.viewWidth >= this.RESPONSIVE_THRESHOLD_MOBILE
+    ) {
+      this.textAreaRef.nativeElement.select();
+    }
   }
 
   /**
