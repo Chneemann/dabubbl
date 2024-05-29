@@ -21,6 +21,7 @@
           required
           [ngClass]="{ aktivInput: emailField.valid && emailField.touched }"
           pattern="[^@]+@[^.]+\..+"
+          disabled="{{ loginService.isBtnDisabled }}"
         />
         @if (!emailField.valid && emailField.touched) {
         <p class="error">{{ "login.errorText" | translate }}</p>
@@ -44,6 +45,7 @@
           }"
           cols="30"
           rows="10"
+          disabled="{{ loginService.isBtnDisabled }}"
         />
         <img
           class="passwordEye"
@@ -86,6 +88,7 @@
         <button
           type="button"
           class="guestButton"
+          [disabled]="loginService.isBtnDisabled"
           (click)="loginService.guestLogin()"
         >
           {{ "login.BtnRight" | translate }}

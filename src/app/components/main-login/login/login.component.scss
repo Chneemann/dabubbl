@@ -126,6 +126,9 @@ button {
     color: #fff;
     border: 1px solid #ffff;
   }
+  &:disabled {
+    @include buttonGrey;
+  }
 }
 .mobileRegisterContainer {
   display: none;

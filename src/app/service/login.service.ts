@@ -42,6 +42,7 @@ export class loginService {
   isFirstLoad: boolean = true;
   passwordFieldType: string = 'password';
   passwordIcon: string = './assets/img/login/close-eye.svg';
+  isBtnDisabled: boolean = false;
   private hasAnimationPlayed = false;
   private introCompleteStatus = false;
   private secretKey: string = CryptoJSSecretKey.secretKey;
@@ -72,6 +73,7 @@ export class loginService {
    * Authenticates a user using their email and password, fetches the user document, and handles errors.
    */
   login() {
+    this.isBtnDisabled = true;
     const auth = getAuth();
     signInWithEmailAndPassword(auth, this.email, this.password)
       .then((userCredential) => {
@@ -86,10 +88,12 @@ export class loginService {
           .catch((error) => {
             console.error('Error when retrieving the user document:', error);
           });
+        this.isBtnDisabled = false;
       })
       .catch((error) => {
         const errorCode = error.code;
         this.switchCase(errorCode);
+        this.isBtnDisabled = false;
       });
   }
 
@@ -137,6 +141,7 @@ export class loginService {
    * Performs a guest login using predetermined credentials and updates the user's online status.
    */
   guestLogin() {
+    this.isBtnDisabled = true;
     const auth = getAuth();
     const email = 'guest@guestaccount.com';
     const password = 'guest@guestaccount.com';
@@ -149,12 +154,14 @@ export class loginService {
         this.getUserIdInLocalStorage(userId);
         this.email = '';
         this.password = '';
+        this.isBtnDisabled = false;
       })
       .catch((error) => {
         console.error(error);
         this.translate.get('login.errorText6').subscribe((res: string) => {
           this.errorMessage = res;
         });
+        this.isBtnDisabled = false;
       });
   }
 
