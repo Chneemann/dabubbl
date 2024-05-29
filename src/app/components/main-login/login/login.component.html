@@ -23,7 +23,8 @@
           pattern="[^@]+@[^.]+\..+"
           disabled="{{ loginService.isBtnDisabled }}"
         />
-        @if (!emailField.valid && emailField.touched) {
+        @if (!emailField.valid && emailField.touched &&
+        !loginService.isBtnDisabled) {
         <p class="error">{{ "login.errorText" | translate }}</p>
         }
       </div>
@@ -53,13 +54,13 @@
           [src]="loginService.passwordIcon"
           alt="Toggle visibility"
         />
-        @if (!passwordField.valid && passwordField.touched) {
+        @if (!passwordField.valid && passwordField.touched &&
+        !loginService.isBtnDisabled && isPasswordFieldEmpty()) {
         <p class="error">{{ "login.errorText2" | translate }}</p>
-        } @if (loginService.errorMessage) {
+        } @if (loginService.errorMessage && !isPasswordFieldEmpty()) {
         <p class="error">{{ loginService.errorMessage }}</p>
         }
       </div>
-
       <div class="passwordContainer">
         <span routerLink="/passwordForget">{{
           "login.midText" | translate

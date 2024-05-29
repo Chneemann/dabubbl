@@ -52,6 +52,13 @@ export class LoginComponent {
     }
   }
 
+  isPasswordFieldEmpty(): boolean {
+    return (
+      !this.loginService.password ||
+      this.loginService.password.trim().length === 0
+    );
+  }
+
   /**
    * Handles form submission by triggering the login process through a login service.
    * This method would typically be called when a user submits a form associated with logging in.

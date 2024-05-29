@@ -33,7 +33,7 @@
   justify-content: end;
 }
 
-.createAccoun {
+.createAccount {
   text-align: end;
   font-family: Figtree, sans-serif, Nunito;
   color: #797ef3;
@@ -47,8 +47,6 @@
   font-size: 18px;
   margin-right: -13px;
   &:hover {
-    font-weight: 500;
-    background-color: #eceefe;
     color: #444df2;
     border: 1px solid #444df2;
   }
@@ -235,7 +233,7 @@
       align-items: center;
     }
   }
-  .createAccoun {
+  .createAccount {
     margin-right: 0;
   }
   .logoEndPosition {
