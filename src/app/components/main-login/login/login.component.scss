@@ -59,13 +59,13 @@ section {
 .separatorContainer {
   display: flex;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
   gap: 10px;
   font-size: 18px;
   margin-bottom: 32px;
   > div {
     border: 1px solid #adb0d9;
-    width: 42%;
+    width: 45%;
     height: 0px;
     display: flex;
     justify-content: center;
@@ -90,6 +90,9 @@ section {
     border: 1px solid #444df2;
     color: #444df2;
     cursor: pointer;
+  }
+  &:disabled {
+    @include buttonGrey;
   }
 }
 

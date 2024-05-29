@@ -72,10 +72,14 @@
         <div></div>
       </div>
 
-      <div (click)="loginService.googleLogin()" class="googleLogingContainer">
+      <button
+        (click)="loginService.googleLogin()"
+        class="googleLogingContainer"
+        [disabled]="loginService.isBtnDisabled"
+      >
         <img src="./assets/img/login/google.svg" alt="" />
         <span>{{ "login.googleBtn" | translate }}</span>
-      </div>
+      </button>
 
       <div class="loginBottom">
         <button
