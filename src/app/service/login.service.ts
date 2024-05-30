@@ -64,6 +64,7 @@ export class loginService {
     let currentUser = this.userService.getCurrentUserId();
     if (currentUser !== null) {
       this.router.navigate([`/main`]);
+      this.isBtnDisabled = false;
     }
   }
 
@@ -88,7 +89,6 @@ export class loginService {
           .catch((error) => {
             console.error('Error when retrieving the user document:', error);
           });
-        this.isBtnDisabled = false;
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -154,7 +154,6 @@ export class loginService {
         this.getUserIdInLocalStorage(userId);
         this.email = '';
         this.password = '';
-        this.isBtnDisabled = false;
       })
       .catch((error) => {
         console.error(error);
@@ -171,6 +170,7 @@ export class loginService {
    * Registers a new user with Firebase authentication and stores user data in Firestore.
    */
   register() {
+    this.isBtnDisabled = true;
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, this.email, this.password)
       .then((userCredential) => {
@@ -190,6 +190,7 @@ export class loginService {
       .catch((error) => {
         console.error(error);
         this.deleteUserFormData();
+        this.isBtnDisabled = false;
       });
   }
 

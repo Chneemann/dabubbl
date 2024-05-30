@@ -45,14 +45,22 @@
     <div class="ownAvatarContainer">
       <div>{{ "chooseAvatar.ownAvatar" | translate }}</div>
       <div>
-        <button class="BtnUpload" (click)="fileInput.click()">
+        <button
+          class="BtnUpload"
+          (click)="fileInput.click()"
+          [disabled]="loginService.isBtnDisabled"
+        >
           {{ "chooseAvatar.avatarBtn" | translate }}
         </button>
       </div>
     </div>
 
     <div class="avatarBottom">
-      <button class="hoverBtn" (click)="loginService.register()">
+      <button
+        class="aktivButton"
+        (click)="loginService.register()"
+        [disabled]="loginService.isBtnDisabled"
+      >
         {{ "chooseAvatar.Btn" | translate }}
       </button>
     </div>

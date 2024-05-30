@@ -76,6 +76,9 @@ section {
     background-color: #444df2;
     color: #ffff;
   }
+  &:disabled {
+    @include buttonGrey;
+  }
 }
 
 .avatarBottom {
@@ -89,9 +92,10 @@ button {
   @include buttonGrey;
   cursor: pointer;
 }
-.hoverBtn {
-  &:hover {
-    background-color: #676eec;
+.aktivButton {
+  @include aktivButtonBlue;
+  &:disabled {
+    @include buttonGrey;
   }
 }
 @media (max-width: 570px) {
