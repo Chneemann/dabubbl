@@ -16,7 +16,9 @@
     "errorText3": "*Ungültige Anmeldeinformationen.",
     "errorText4": "*Zuviele fehlgeschlagener Anmeldeversuche.",
     "errorText5": "*Bitte Überprüfe deine Eingaben.",
-    "errorText6": "*Bitte versuchen Sie es später erneut."
+    "errorText6": "*Bitte versuchen Sie es später erneut.",
+    "loginDialog0": "Einloggen",
+    "loginDialog1": "Bitte warten..."
   },
 
   "createAccount": {

@@ -6,6 +6,7 @@ import { PasswordForgetComponent } from './password-forget/password-forget.compo
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { LoadingDialogComponent } from './loading-dialog/loading-dialog.component';
 
 @Component({
   selector: 'app-main-login',

@@ -6,6 +6,7 @@ import { FooterComponent } from '../../../shared/components/login/footer/footer.
 import { CommonModule } from '@angular/common';
 import { StartHeaderComponent } from '../../../shared/components/login/start-header/start-header.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { LoadingDialogComponent } from '../loading-dialog/loading-dialog.component';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,7 @@ import { TranslateModule } from '@ngx-translate/core';
     RouterLink,
     StartHeaderComponent,
     TranslateModule,
+    LoadingDialogComponent,
   ],
 })
 export class LoginComponent {

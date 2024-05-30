@@ -16,7 +16,9 @@
     "errorText3": "*Invalid login credentials.",
     "errorText4": "*Too many failed login attempts.",
     "errorText5": "*Please check your entries.",
-    "errorText6": "*Please try again later."
+    "errorText6": "*Please try again later.",
+    "loginDialog0": "Logging in",
+    "loginDialog1": "Please wait..."
   },
 
   "createAccount": {
