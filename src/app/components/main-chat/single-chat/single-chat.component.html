@@ -95,7 +95,7 @@
           [viewWidth]="viewWidth"
         ></app-attachments>
       </div>
-      @if (!isPrivatChannel) {
+      @if (!isPrivatChannel && !openOnSecondaryChat) {
       <div class="answers">
         @if (chatService.getChatAnswers(chat.id).length > 0 && showAnswer) {
         @if(chatService.getChatAnswers(chat.id).length == 1) {
