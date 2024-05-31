@@ -36,6 +36,7 @@
           [(ngModel)]="userService.nameValue"
           required
           [disabled]="asGuestOnline"
+          id="fullName"
           name="fullName"
         />
         } @else {
@@ -48,6 +49,7 @@
           required
           minlength="3"
           (ngModelChange)="checkIfUserNameIsValid($event)"
+          id="fullName"
           name="fullName"
         />
         }
@@ -65,6 +67,7 @@
           class="inputDisabled"
           type="email"
           required
+          id="emailValue"
           name="emailValue"
           [(ngModel)]="userService.emailValue"
           [disabled]="asGuestOnline"

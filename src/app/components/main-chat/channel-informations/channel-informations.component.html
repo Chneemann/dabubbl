@@ -45,7 +45,14 @@
       } @else {
       <div class="channelName">
         <img src="./assets/img/hashtag.svg" alt="" />
-        <input type="text" [(ngModel)]="nameValue" class="inputName" />
+        <input
+          type="text"
+          [(ngModel)]="nameValue"
+          class="inputName"
+          id="inputName"
+          name="inputName"
+          autocomplete="off"
+        />
       </div>
       } }
     </div>

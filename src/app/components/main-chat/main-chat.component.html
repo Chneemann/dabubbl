@@ -1,19 +1,22 @@
 <section>
   @if (checkCurrentChannel(currentChannel) == 'searchBar') {
-  <!-----Searchwindow at the sidebar----->
+  <!----- Searchwindow ----->
   <div class="headerSearchBar">
     <p>{{ "main-chat.message" | translate }}</p>
     <input
       type="text"
+      id="searchInput"
+      name="searchInput"
+      autocomplete="off"
       placeholder="{{ 'main-chat.placeholder' | translate }}"
       [(ngModel)]="chatService.inputValue"
       (keyup)="filterChannelAndUser(chatService.inputValue)"
     />
     @if (toggleBoolean.openSearchWindow) {
-    <!-----search suggestions----->
+    <!----- Search suggestions ----->
     <div class="filteredElementWindow">
       @if (firstLetter == '#') {
-      <!-- render channels -->
+      <!----- Render channels ----->
       @for (i of checkIfUserHasAccessToChannel(); track $index) {
       <h3
         class="user"
@@ -21,7 +24,7 @@
         [innerHTML]="i.name | highlight : chatService.inputValue"
       ></h3>
       } } @else if (firstLetter == '@') {
-      <!-- render users -->
+      <!----- Render users ----->
       @for (i of userService.allUsers; track $index) {
       <div class="user" (click)="chooseElement(i)">
         <div class="positionImgs">
@@ -58,7 +61,7 @@
     </app-chat-content>
   </div>
   } @else { @if(checkCurrentChannel(currentChannel) == 'allPrvChannels'){
-  <!------------shwo prv chat----------->
+  <!----- privat chat ----->
   @for (user of getPrvChat(currentChannel); track user; let i = $index) {
   <div class="headerPrvChat">
     <div class="headlinePrvChat" (click)="openUserProfil()">
@@ -105,7 +108,7 @@
   >
   </app-chat-content>
   } } @else if (checkCurrentChannel(currentChannel) == 'allChannels') {
-  <!-------show public channel-chat ----------->
+  <!----- channel ----->
   @for(channel of getChannelName(currentChannel); track channel) {
   <div class="header">
     <div class="headline" (click)="showMenu()">
@@ -162,7 +165,7 @@
   >
   </app-chat-content>
   }
-  <!-- Channel informations dialog -->
+  <!----- Channel informations dialog ----->
   @if (openMenu) {
   <app-channel-informations
     [viewWidth]="viewWidth"

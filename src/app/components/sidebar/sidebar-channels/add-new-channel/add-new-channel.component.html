@@ -32,6 +32,8 @@
     </div>
     <input
       type="text"
+      id="channelName"
+      name="channelName"
       class="textfieldStyle hashtagPadding"
       placeholder="{{ 'add-new-channel.placeholder' | translate }}"
       maxlength="20"
@@ -47,6 +49,8 @@
       id=""
       cols="30"
       rows="10"
+      id="channelDescription"
+      name="channelDescription"
       class="textfieldStyle"
       [(ngModel)]="channelDescription"
       placeholder="{{ 'add-new-channel.placeholder2' | translate }}"
