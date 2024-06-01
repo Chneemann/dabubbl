@@ -23,10 +23,10 @@ export class DownloadFilesService {
   }
 
   /**
-   * Loads all files and then lists them.
-   * @param {string} docID - The document ID under which the files are to be saved.
+   * Uploads all files and updates the list.
+   * @param {string} docID - The documentId under which the files are to be saved.
    */
-  loadAllFiles(docID: string) {
+  uploadAllFiles(docID: string) {
     const storage = getStorage();
     for (const file of this.uploadFiles) {
       const storageRef = ref(storage, `chatFiles/${docID}/${file.name}`);

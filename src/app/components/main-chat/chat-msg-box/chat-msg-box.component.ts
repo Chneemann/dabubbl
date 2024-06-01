@@ -212,7 +212,7 @@ export class ChatMsgBoxComponent {
       if (messageData) {
         await addDoc(messageRef, messageData)
           .then((docRef) => {
-            this.downloadFilesService.loadAllFiles(docRef.id);
+            this.downloadFilesService.uploadAllFiles(docRef.id);
           })
           .catch((error) => {
             console.error('Error adding document: ', error);
