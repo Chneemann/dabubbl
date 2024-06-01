@@ -1,0 +1,12 @@
+$RESPONSIVE_THRESHOLD_MOBILE380px: 380px;
+$RESPONSIVE_THRESHOLD_MOBILE: 600px;
+$RESPONSIVE_THRESHOLD: 1300px;
+$RESPONSIVE_THRESHOLD_MAX: 1900px;
+$RESPONSIVE_THRESHOLD_SEARCHBAR: 1100px;
+
+@mixin displayFlex($d: flex, $j: center, $a: center, $g: 0) {
+  display: $d;
+  justify-content: $j;
+  align-items: $a;
+  gap: $g;
+}

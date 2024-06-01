@@ -1,4 +1,4 @@
-@import "../../../../styles.scss";
+@import "../../../../assets/mixins/responsive.scss";
 
 section {
   display: flex;
@@ -52,7 +52,7 @@ section {
   section {
     height: calc(100vh - 144px);
   }
-  
+
   .privatChatHeight {
     height: calc(100vh - 158px);
   }

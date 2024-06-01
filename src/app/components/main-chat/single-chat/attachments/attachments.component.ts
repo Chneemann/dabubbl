@@ -28,7 +28,13 @@ export class AttachmentsComponent {
 
   RESPONSIVE_THRESHOLD = this.sharedService.RESPONSIVE_THRESHOLD;
 
-  async ngOnInit() {}
+  async ngOnInit() {
+    if (this.filePath) {
+      this.imageUrl = await this.downloadFilesService.downloadFiles(
+        this.filePath
+      );
+    }
+  }
 
   // Type of files:
   // Img: PNG, GIF, JPG, JPEG

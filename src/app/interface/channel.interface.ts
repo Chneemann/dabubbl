@@ -1,6 +1,7 @@
 export const publicChannels: string[] = [
   'ktoVhTjif9OndCsLfEF7',
   't0zOHsjKzq0uYSqsMx8j',
+  'UVeEk7NxpRZjdaNdNWom',
 ];
 export interface Channel {
   id?: string;

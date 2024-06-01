@@ -1,4 +1,4 @@
-@import "../../../../styles.scss";
+@import "../../../../assets/mixins/responsive.scss";
 
 section {
   display: flex;
@@ -50,7 +50,6 @@ section {
   background-color: #edeefe;
   border-radius: 36px;
 }
-
 
 @media screen and (max-width: $RESPONSIVE_THRESHOLD_MOBILE380px) {
   section {

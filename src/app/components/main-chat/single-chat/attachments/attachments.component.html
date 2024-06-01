@@ -5,7 +5,6 @@
     <img
       src="{{ imageUrl }}"
       alt="image"
-      loading="lazy"
       [ngStyle]="{
         height:
           openOnSecondaryChat && viewWidth >= RESPONSIVE_THRESHOLD
@@ -20,7 +19,6 @@
         class="otherFiles"
         src="./assets/img/attachments/{{ getFileType(imageUrl) }}.png"
         alt="image"
-        loading="lazy"
         [ngStyle]="{
           height:
             openOnSecondaryChat && viewWidth >= RESPONSIVE_THRESHOLD
@@ -33,7 +31,6 @@
       controls
       preload="auto"
       src="{{ imageUrl }}"
-      loading="lazy"
       [ngStyle]="{
         width:
           openOnSecondaryChat && viewWidth >= RESPONSIVE_THRESHOLD
@@ -46,7 +43,6 @@
       <video
         src="{{ imageUrl }}"
         alt="video"
-        loading="lazy"
         [ngStyle]="{
           height:
             openOnSecondaryChat && viewWidth >= RESPONSIVE_THRESHOLD
