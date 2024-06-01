@@ -18,7 +18,6 @@ export class AttachmentsComponent {
   @Input() openOnSecondaryChat: boolean = false;
   @Input() viewWidth: number = 0;
   loadingUrl: string = './../../../assets/img/loading.svg';
-  cachedImageUrl: string | null = null;
   imageUrl: string | null = '';
 
   constructor(
@@ -31,17 +30,9 @@ export class AttachmentsComponent {
 
   async ngOnInit() {
     if (this.filePath) {
-      // Überprüfen Sie, ob der Bild-URL bereits im Cache vorhanden ist
-      if (!this.cachedImageUrl) {
-        // Wenn nicht, laden Sie ihn herunter und speichern Sie ihn im Cache
-        this.cachedImageUrl = await this.downloadFilesService.downloadFiles(
-          this.filePath
-        );
-        console.log('1');
-      }
-
-      // Verwenden Sie den gecachten Bild-URL
-      this.imageUrl = this.cachedImageUrl;
+      this.imageUrl = await this.downloadFilesService.downloadFiles(
+        this.filePath
+      );
     }
   }
 

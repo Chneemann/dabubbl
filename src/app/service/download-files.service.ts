@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
   getDownloadURL,
-  getMetadata,
   getStorage,
   listAll,
   ref,
@@ -23,21 +22,21 @@ export class DownloadFilesService {
     this.listAllFiles();
   }
 
-  checkChatHasFiles(chatId: string) {
-    const storage = getStorage();
-    const listRef = ref(storage, `chatFiles/${chatId}`);
-    return listAll(listRef)
-      .then((result) => {
-        if (result.items.length > 0) {
-          return result.items[0].fullPath;
-        } else {
-          return undefined;
-        }
-      })
-      .catch((error) => {
-        console.error('Error listing files:', error);
+  async checkChatHasFiles(chatId: string): Promise<string | undefined> {
+    try {
+      const storage = getStorage();
+      const listRef = ref(storage, `chatFiles/${chatId}`);
+
+      const result = await listAll(listRef);
+      if (result.items.length > 0) {
+        return result.items[0].fullPath;
+      } else {
         return undefined;
-      });
+      }
+    } catch (error) {
+      console.error('Error listing files:', error);
+      return undefined;
+    }
   }
 
   /**

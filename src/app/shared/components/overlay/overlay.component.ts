@@ -1,8 +1,4 @@
-import {
-  Component,
-  HostListener,
-  OnInit
-} from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { OverlayService } from '../../../service/overlay.service';
 import { CommonModule } from '@angular/common';
 import { SmallBtnComponent } from '../small-btn/small-btn.component';
@@ -19,7 +15,6 @@ export class OverlayComponent implements OnInit {
 
   constructor(private overlayService: OverlayService) {}
 
-
   /**
    * Initializes the component and subscribes to overlay data changes.
    */
@@ -28,7 +23,6 @@ export class OverlayComponent implements OnInit {
       this.overlayData = data;
     });
   }
-
 
   /**
    * Extracts the file type from the file name.
@@ -41,14 +35,12 @@ export class OverlayComponent implements OnInit {
     return getTag || '';
   }
 
-
   /**
    * Closes the overlay.
    */
   onCloseOverlay() {
     this.overlayData = '';
   }
-
 
   /**
    * Checks if the contact edit overlay is open and closes it if the click is outside the overlay content.
@@ -59,7 +51,7 @@ export class OverlayComponent implements OnInit {
     const targetElement = event.target as HTMLElement;
     if (
       !targetElement.closest('.overlayContent') &&
-      !targetElement.closest('.attachments')
+      !targetElement.closest('.files')
     ) {
       this.onCloseOverlay();
     }
