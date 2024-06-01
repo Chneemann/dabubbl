@@ -22,6 +22,10 @@ export class DownloadFilesService {
     this.listAllFiles();
   }
 
+  /**
+   * Loads all files and then lists them.
+   * @param {string} docID - The document ID under which the files are to be saved.
+   */
   loadAllFiles(docID: string) {
     const storage = getStorage();
     for (const file of this.uploadFiles) {
@@ -32,6 +36,9 @@ export class DownloadFilesService {
     }
   }
 
+  /**
+   * Lists all files in 'chatFiles' and updates the downloaded files.
+   */
   listAllFiles() {
     const storage = getStorage();
     const listRef2 = ref(storage, 'chatFiles');
@@ -57,7 +64,7 @@ export class DownloadFilesService {
         this.downloadedFiles.next(downloadedFilesData);
       })
       .catch((error) => {
-        console.error('Fehler beim Abrufen der Dateien:', error);
+        console.error('Error when retrieving the files:', error);
       });
   }
 }
