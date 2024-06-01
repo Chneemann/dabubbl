@@ -5,7 +5,7 @@
   @for(i of talkToUser; track i){
   <div class="whiteBox">
     <div class="boxHeader">
-      <p>{{ 'open-send-prv-message.profil' | translate }}</p>
+      <p>{{ "open-send-prv-message.profil" | translate }}</p>
       <div class="positionCloseIcon" (click)="closeWindow()">
         <img src="./assets/img/closeIcon.svg" class="closeIcon" />
       </div>
@@ -18,26 +18,27 @@
 
       <div class="statusBox">
         <img
-          src="./assets/img/{{ i.status ? 'onlineRing.svg' : 'offlineRing.svg' }}"
+          src="./assets/img/{{
+            i.status ? 'onlineRing.svg' : 'offlineRing.svg'
+          }}"
           class="onlineIcon"
         />
         @if (i.status) {
-        <p class="fontColorGreen">{{ 'open-send-prv-message.aktiv' | translate }}</p>
+        <p class="fontColorGreen">
+          {{ "open-send-prv-message.aktiv" | translate }}
+        </p>
         } @else {
-        <p>{{ 'open-send-prv-message.offline' | translate }}</p>
+        <p>{{ "open-send-prv-message.offline" | translate }}</p>
         }
       </div>
 
       <div class="emailBox">
         <img src="./assets/img/mail-icon.svg" />
         <div class="email">
-          <p>{{ 'open-send-prv-message.adress' | translate }}</p>
-          <a
-            href="mailto:wwweewefeff&#64;dede.de"
-            target="_blank"
-            class="fontNunito"
-            >{{ i.email }}</a
-          >
+          <p>{{ "open-send-prv-message.adress" | translate }}</p>
+          <a href="mailto:wwweewefeff&#64;dede.de" target="_blank">{{
+            i.email
+          }}</a>
         </div>
       </div>
     </div>
@@ -47,7 +48,7 @@
   @for(i of user; track i){
   <div class="whiteBox">
     <div class="boxHeader">
-      <p>{{ 'open-send-prv-message.profil' | translate }}</p>
+      <p>{{ "open-send-prv-message.profil" | translate }}</p>
       <div class="positionCloseIcon" (click)="closeWindow()">
         <img src="./assets/img/closeIcon.svg" class="closeIcon" />
       </div>
@@ -60,13 +61,17 @@
 
       <div class="statusBox">
         <img
-          src="./assets/img/{{ i.status ? 'onlineRing.svg' : 'offlineRing.svg' }}"
+          src="./assets/img/{{
+            i.status ? 'onlineRing.svg' : 'offlineRing.svg'
+          }}"
           class="onlineIcon"
         />
         @if (i.status) {
-        <p class="fontColorGreen">{{ 'open-send-prv-message.aktiv' | translate }}</p>
+        <p class="fontColorGreen">
+          {{ "open-send-prv-message.aktiv" | translate }}
+        </p>
         } @else {
-        <p>{{ 'open-send-prv-message.offline' | translate }}</p>
+        <p>{{ "open-send-prv-message.offline" | translate }}</p>
         }
       </div>
 
@@ -74,17 +79,13 @@
         <img src="./assets/img/mail-icon.svg" />
         <div class="email">
           <p>E-Mail-Address</p>
-          <a
-            href="mailto:wwweewefeff&#64;dede.de"
-            target="_blank"
-            class="fontNunito"
-            >{{ i.email }}</a
-          >
+          <a href="mailto:{{ i.email }}" target="_blank">{{ i.email }}</a>
         </div>
       </div>
     </div>
     <button (click)="routeToUser(user)">
-      <img src="./assets/img/messageIcon.svg" /> {{ 'open-send-prv-message.message' | translate }}
+      <img src="./assets/img/messageIcon.svg" />
+      {{ "open-send-prv-message.message" | translate }}
     </button>
   </div>
   } }

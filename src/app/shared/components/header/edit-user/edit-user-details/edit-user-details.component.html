@@ -6,8 +6,8 @@
     #contactForm="ngForm"
     onsubmit="return false"
   >
-    <div class="boxHeader fontNunito">
-      <h2 class="fontNunito">{{ "edit-user-details.profile" | translate }}</h2>
+    <div class="boxHeader">
+      <h2>{{ "edit-user-details.profile" | translate }}</h2>
       <app-small-btn
         [imgSrc]="'closeIcon.svg'"
         [imgSize]="'18px'"
@@ -23,7 +23,7 @@
       <div class="positionName">
         <div class="positionNameIcon">
           <img src="./assets/img/personCircle.svg" />
-          <p class="fontNunito">
+          <p>
             {{ "edit-user-details.fullName" | translate }}
           </p>
         </div>
@@ -58,7 +58,7 @@
       <div class="positionName">
         <div class="positionNameIcon">
           <img src="./assets/img/mail-iconBlack.svg" />
-          <p class="fontNunito">{{ "edit-user-details.email" | translate }}</p>
+          <p>{{ "edit-user-details.email" | translate }}</p>
         </div>
         @if (!filterGuest()) {
         <!--guest input-->

@@ -1,7 +1,4 @@
 @import "../../../shared/components/login/mixins/mixin.scss";
-* {
-  font-family: Nunito;
-}
 
 section {
   @include SectionBody;
