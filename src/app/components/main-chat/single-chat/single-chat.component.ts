@@ -54,12 +54,24 @@ export class SingleChatComponent {
   isMsgEditFormOpen: boolean = false;
   firstLoadOptionMenu: boolean = false;
 
+  filePath: string | undefined = '';
+
   constructor(
     public chatService: ChatService,
     public channelService: ChatService,
     public userService: UserService,
     public downloadFilesService: DownloadFilesService
   ) {}
+
+  ngOnInit() {
+    this.checkChatHasFiles();
+  }
+
+  async checkChatHasFiles() {
+    this.filePath = await this.downloadFilesService.checkChatHasFiles(
+      this.chat.id
+    );
+  }
 
   /**
    * Emits a signal to edit a message.

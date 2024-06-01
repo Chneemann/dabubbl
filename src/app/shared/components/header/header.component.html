@@ -11,9 +11,11 @@
     <img src="./assets/img/home-icon.svg" class="homeIcon" />
     }
   </div>
+  @if (viewWidth >= RESPONSIVE_THRESHOLD) {
   <div class="middleSide">
     <app-search-bar [viewWidth]="viewWidth"></app-search-bar>
   </div>
+  }
   <div>
     <div class="rightSide">
       @for(i of userService.getCurentUsers(); track i){

@@ -122,10 +122,6 @@ header {
 /*------------- RESPONSIVE -------------*/
 
 @media screen and (max-width: $RESPONSIVE_THRESHOLD) {
-  .middleSide {
-    display: none;
-  }
-
   .rightSide,
   .leftSide {
     width: 50vw;

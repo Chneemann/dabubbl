@@ -89,11 +89,14 @@
           <span>{{ "single-chat.edit" | translate }}</span>
           }
         </div>
+        @if(filePath) {
         <app-attachments
           [chatId]="chat.id"
           [openOnSecondaryChat]="openOnSecondaryChat"
           [viewWidth]="viewWidth"
+          [filePath]="filePath"
         ></app-attachments>
+        }
       </div>
       @if (!isPrivatChannel && !openOnSecondaryChat) {
       <div class="answers">
