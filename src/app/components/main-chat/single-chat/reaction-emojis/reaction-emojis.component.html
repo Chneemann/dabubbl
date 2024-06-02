@@ -26,7 +26,6 @@
     [ngStyle]="{
       left: user.id === userService.getCurrentUserId() ? 'unset' : '',
       right: user.id === userService.getCurrentUserId() ? '20px' : '',
-      
     }"
   ></app-emoji-picker>
   }
@@ -35,6 +34,10 @@
     @if (reaction.id) {
     <div
       class="emoji"
+      [ngStyle]="{
+        'background-color':
+          reaction.userId == userService.getCurrentUserId() ? '#c7cafc' : ''
+      }"
       (click)="toggleEmoji(reaction.id)"
       (mousemove)="openDialog(reaction.id, $event)"
       (mouseleave)="closeDialog()"
