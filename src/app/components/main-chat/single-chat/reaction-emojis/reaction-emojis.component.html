@@ -36,7 +36,7 @@
       class="emoji"
       [ngStyle]="{
         'background-color':
-          reaction.userId == userService.getCurrentUserId() ? '#c7cafc' : ''
+          reaction.userId[i] == userService.getCurrentUserId() ? '#c7cafc' : ''
       }"
       (click)="toggleEmoji(reaction.id)"
       (mousemove)="openDialog(reaction.id, $event)"
