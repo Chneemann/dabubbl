@@ -176,7 +176,8 @@ export class ChatMsgBoxComponent {
    */
   targetChatUser(event: Event) {
     event.stopPropagation();
-    this.toggleBoolean.selectUserInMsgBox = true;
+    this.toggleBoolean.selectUserInMsgBox =
+      !this.toggleBoolean.selectUserInMsgBox;
   }
 
   /**
