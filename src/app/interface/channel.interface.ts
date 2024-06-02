@@ -12,6 +12,7 @@ export interface Channel {
   hashtag: string;
   createdDate: string;
   addedUser: Array<string>;
+  index: number;
 }
 
 export interface PrvChannel {

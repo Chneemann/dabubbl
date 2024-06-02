@@ -82,6 +82,8 @@ export class SidebarChannelsComponent {
       (channel) => !priorityChannels.includes(channel)
     );
 
-    return [...priorityChannels, ...otherChannels];
+    return [...priorityChannels, ...otherChannels].sort(
+      (a, b) => a.index - b.index
+    );
   }
 }

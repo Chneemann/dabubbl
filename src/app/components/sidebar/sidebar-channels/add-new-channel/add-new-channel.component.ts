@@ -154,11 +154,13 @@ export class AddNewChannelComponent {
 
   /**
    * Check if channel is allready existing.
-   * @param channelName 
-   * @returns 
+   * @param channelName
+   * @returns
    */
-  chechIfChannelExist(channelName: string){
-    const filterChannel = this.channelService.allChannels.some(channel => channel.name === channelName);
+  chechIfChannelExist(channelName: string) {
+    const filterChannel = this.channelService.allChannels.some(
+      (channel) => channel.name === channelName
+    );
     if (filterChannel) {
       return true;
     } else {
@@ -178,6 +180,7 @@ export class AddNewChannelComponent {
       hashtag: this.channelName,
       createdDate: this.currentDate,
       addedUser: this.checkUserArray(),
+      index: this.lastChannelIndex() + 1,
     };
     const channelId = await this.channelService.createNewChannel(
       newChannel,
@@ -188,6 +191,17 @@ export class AddNewChannelComponent {
       this.toggleBooleanService.isSidebarOpen = false;
     }
     this.route.navigateByUrl(`main/${channelId}`);
+  }
+
+  /**
+   * Calculates the index of the last channel and returns the next available index.
+   * @returns {number} The next available channel index.
+   */
+  lastChannelIndex(): number {
+    const channels = this.channelService.allChannels.filter(
+      (channel) => channel.index !== undefined && channel.index !== null
+    );
+    return Math.max(...channels.map((channel) => channel.index));
   }
 
   /**

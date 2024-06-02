@@ -2,9 +2,9 @@
 
 .files {
   display: flex;
-
   max-width: calc(100vw - 140px);
   overflow: auto;
+  margin-top: 12px;
   .filesView {
     cursor: pointer;
     transition: 0.3s ease-in-out;

@@ -8,7 +8,7 @@
         class="arrowImg"
       />
       <img src="./assets/img/sidebar/bubbles.svg" alt="" />
-      <p> {{ 'sidebar-channels.channel' | translate }}</p>
+      <p>{{ "sidebar-channels.channel" | translate }}</p>
     </div>
     <div class="btn">
       <app-small-btn
@@ -29,7 +29,7 @@
       showAllChanneld: minimizeChannels
     }"
   >
-    @for (channel of getChannels(); track channel; let i = $index) {
+    @for (channel of getChannels(); track channel) {
     <div
       class="channelName"
       routerLink="/main/{{ channel.id }}"
@@ -47,7 +47,7 @@
     <div class="circle">
       <img src="./assets/img/sidebar/add-circle.svg" alt="" />
     </div>
-    <p>{{ 'sidebar-channels.addChannel' | translate }}</p>
+    <p>{{ "sidebar-channels.addChannel" | translate }}</p>
   </div>
   <app-add-new-channel
     [viewWidth]="viewWidth"
