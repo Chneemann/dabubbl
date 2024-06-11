@@ -19,7 +19,7 @@ export class OpenSendPrvMessageWindowComponent {
   @Input() talkToUser!: User[];
   @Input() openUserWindowBoolean!: boolean;
   @Input() showProfil!: boolean;
-  @Output() closeUserWondow = new EventEmitter<boolean>();
+  @Output() closeUserWindow = new EventEmitter<boolean>();
   @Output() showProfilWindow = new EventEmitter<boolean>();
   isOnline: boolean = false;
 
@@ -37,7 +37,7 @@ export class OpenSendPrvMessageWindowComponent {
   closeWindow() {
     this.openUserWindowBoolean = false;
     this.showProfil = false;
-    this.closeUserWondow.emit(this.openUserWindowBoolean);
+    this.closeUserWindow.emit(this.openUserWindowBoolean);
     this.showProfilWindow.emit(this.showProfil);
   }
 
@@ -47,7 +47,7 @@ export class OpenSendPrvMessageWindowComponent {
    */
   closeEverything() {
     this.openUserWindowBoolean = false;
-    this.closeUserWondow.emit(this.openUserWindowBoolean);
+    this.closeUserWindow.emit(this.openUserWindowBoolean);
     this.toggleBoolean.openChannelMemberWindow = false;
     this.toggleBoolean.closeChannelMemberWindow = false;
   }

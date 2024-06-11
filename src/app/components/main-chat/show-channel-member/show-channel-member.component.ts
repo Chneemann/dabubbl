@@ -26,7 +26,7 @@ export class ShowChannelMemberComponent {
   @Input() isSecondaryChatOpen: boolean = false;
 
   userName: string = '';
-  showExistenUsers: boolean = false;
+  showExistedUsers: boolean = false;
   getSearchedUser: User[] = [];
   getCurrentChannelName: string = '';
   getSelectedUsers: User[] = [];
@@ -59,7 +59,7 @@ export class ShowChannelMemberComponent {
    */
   filterUsers(searchValue: string) {
     if (searchValue != '') {
-      this.showExistenUsers = true;
+      this.showExistedUsers = true;
       this.getSearchedUser = [];
       const searchedUser = searchValue.toLowerCase().trim();
       const filteredUsers = this.userService.getUsers().filter((user) => {
@@ -99,7 +99,7 @@ export class ShowChannelMemberComponent {
    * @param {User} user - The user to check.
    * @returns {boolean} Returns true if the user is already selected, otherwise false.
    */
-  isUserAlreadySelectet(user: User) {
+  isUserAlreadySelected(user: User) {
     return this.getSelectedUsers.some(
       (selectedUser) => selectedUser.id === user.id
     );
@@ -119,7 +119,7 @@ export class ShowChannelMemberComponent {
       this.getSelectedUsers.push(user);
     }
     this.userName = '';
-    this.showExistenUsers = false;
+    this.showExistedUsers = false;
   }
 
   /**
@@ -128,7 +128,7 @@ export class ShowChannelMemberComponent {
    */
   spliceCurrentUser(index: number) {
     this.getSelectedUsers.splice(index, 1);
-    this.showExistenUsers = false;
+    this.showExistedUsers = false;
   }
 
   /**
@@ -184,7 +184,7 @@ export class ShowChannelMemberComponent {
    */
   resetValues() {
     this.userName = '';
-    this.showExistenUsers = false;
+    this.showExistedUsers = false;
     this.getSearchedUser = [];
     this.getCurrentChannelName = '';
     this.getSelectedUsers = [];

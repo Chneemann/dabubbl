@@ -77,13 +77,13 @@
       </div>
       <div
         class="showSearchedUsersWindow"
-        [ngClass]="{ dBlock: showExistenUsers, dNone: !showExistenUsers }"
+        [ngClass]="{ dBlock: showExistedUsers, dNone: !showExistedUsers }"
       >
         <div class="positionOfAllUsersBox">
           @if(getSearchedUser.length <= 0) {
           <span>{{ "show-channel-member.result" | translate }}</span> }
           @for(user of getSearchedUser; track user){
-          @if(!isUserAlreadySelectet(user)) {
+          @if(!isUserAlreadySelected(user)) {
           <div class="userBox" (click)="chooseUser(user)">
             <div class="positionImgsBox">
               <img src="{{ user.avatar }}" class="addAvatarImg" />
@@ -129,5 +129,5 @@
   [ngClass]="{ dBlock: openUserWindowBoolean, dNone: !openUserWindowBoolean }"
   [user]="user"
   [openUserWindowBoolean]="openUserWindowBoolean"
-  (closeUserWondow)="changeOpenUserWindowBoolean($event)"
+  (closeUserWindow)="changeOpenUserWindowBoolean($event)"
 ></app-open-send-prv-message-window>

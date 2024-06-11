@@ -12,7 +12,7 @@ import { OpenSendPrvMessageWindowComponent } from '../show-channel-member/open-s
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-channel-informations',
+  selector: 'app-channel-information',
   standalone: true,
   imports: [
     CommonModule,
@@ -21,10 +21,10 @@ import { TranslateModule } from '@ngx-translate/core';
     OpenSendPrvMessageWindowComponent,
     TranslateModule,
   ],
-  templateUrl: './channel-informations.component.html',
-  styleUrl: './channel-informations.component.scss',
+  templateUrl: './channel-information.component.html',
+  styleUrl: './channel-information.component.scss',
 })
-export class ChannelInformationsComponent {
+export class ChannelInformationComponent {
   @Input() currentChannel: string = '';
   @Input() viewWidth: number = 0;
   @Output() closeEditEmitter: EventEmitter<boolean> =

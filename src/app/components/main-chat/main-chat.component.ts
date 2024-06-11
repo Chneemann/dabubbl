@@ -19,7 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { SmallBtnComponent } from '../../shared/components/small-btn/small-btn.component';
 import { ShowChannelMemberComponent } from './show-channel-member/show-channel-member.component';
 import { SharedService } from '../../service/shared.service';
-import { ChannelInformationsComponent } from './channel-informations/channel-informations.component';
+import { ChannelInformationComponent } from './channel-information/channel-information.component';
 import { filter } from 'rxjs';
 import { OpenSendPrvMessageWindowComponent } from './show-channel-member/open-send-prv-message-window/open-send-prv-message-window.component';
 import { HighlightPipe } from '../../highlight.pipe';
@@ -37,7 +37,7 @@ import { TranslateModule } from '@ngx-translate/core';
     FormsModule,
     SmallBtnComponent,
     ShowChannelMemberComponent,
-    ChannelInformationsComponent,
+    ChannelInformationComponent,
     OpenSendPrvMessageWindowComponent,
     HighlightPipe,
     TranslateModule,

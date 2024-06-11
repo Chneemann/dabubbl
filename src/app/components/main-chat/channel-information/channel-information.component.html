@@ -14,7 +14,7 @@
     <div class="contentChannel">
       @for (channel of getChannelName(currentChannel); track channel) {
       <div class="contentHeadline">
-        <p>{{ "channel-informations.header" | translate }}</p>
+        <p>{{ "channel-information.header" | translate }}</p>
         @if (!openEditNameInput) {
         <!--check if user is creator-->
         @if(checkCreator(currentChannel)){
@@ -60,7 +60,7 @@
       @for (channel of getChannelName(currentChannel); track channel) {
 
       <div class="contentHeadline">
-        <p>{{ "channel-informations.channelInfo" | translate }}</p>
+        <p>{{ "channel-information.channelInfo" | translate }}</p>
         @if (!openEditNameDescription) {
         <!--check if user is creator-->
         @if(checkCreator(currentChannel)){
@@ -88,7 +88,7 @@
         @if (channel.description !== "") {
         <p>{{ channel.description }}</p>
         } @else {
-        <p>{{ "channel-informations.channelInfo2" | translate }}</p>
+        <p>{{ "channel-information.channelInfo2" | translate }}</p>
         }
       </div>
       } @else {
@@ -103,7 +103,7 @@
       }
       <div class="line"></div>
       <div class="contentHeadline">
-        <p>{{ "channel-informations.channelMadeBy" | translate }}</p>
+        <p>{{ "channel-information.channelMadeBy" | translate }}</p>
       </div>
       <div class="channelCreator">
         @if(channel.creator == "Admin") {
@@ -112,7 +112,7 @@
         <p class="creatorName">{{ user.firstName }} {{ user.lastName }}</p>
         } } @if(!checkCreator(currentChannel)){
         <p class="warningPTag">
-          {{ "channel-informations.channelErrorText" | translate }}
+          {{ "channel-information.channelErrorText" | translate }}
         </p>
         }
       </div>
@@ -125,7 +125,7 @@
       }"
     >
       <div class="contentHeadline">
-        <p>{{ "channel-informations.members" | translate }}</p>
+        <p>{{ "channel-information.members" | translate }}</p>
       </div>
       <div class="allUsers">
         @for(allMembers of getAllChannelMembers(currentChannel)[0].addedUser;
@@ -156,14 +156,14 @@
       }"
       [user]="user"
       [openUserWindowBoolean]="openUserWindowBoolean"
-      (closeUserWondow)="changeOpenUserWindowBoolean($event)"
+      (closeUserWindow)="changeOpenUserWindowBoolean($event)"
     ></app-open-send-prv-message-window>
     <div class="leaveChannel">
       <button
         [disabled]="openEditNameInput || openEditNameDescription"
         (click)="leaveChannel(currentChannel, $event)"
       >
-        {{ "channel-informations.leave" | translate }}
+        {{ "channel-information.leave" | translate }}
       </button>
     </div>
   </div>

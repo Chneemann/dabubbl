@@ -1,6 +1,6 @@
 <section>
   @if (checkCurrentChannel(currentChannel) == 'searchBar') {
-  <!----- Searchwindow ----->
+  <!----- Search window ----->
   <div class="headerSearchBar">
     <p>{{ "main-chat.message" | translate }}</p>
     <input
@@ -165,13 +165,13 @@
   >
   </app-chat-content>
   }
-  <!----- Channel informations dialog ----->
+  <!----- Channel information dialog ----->
   @if (openMenu) {
-  <app-channel-informations
+  <app-channel-information
     [viewWidth]="viewWidth"
     (closeEditEmitter)="closeEditEmitter($event)"
     [currentChannel]="currentChannel"
-  ></app-channel-informations>
+  ></app-channel-information>
   } } } @if (showProfil) {
   <app-open-send-prv-message-window
     [showProfil]="showProfil"
