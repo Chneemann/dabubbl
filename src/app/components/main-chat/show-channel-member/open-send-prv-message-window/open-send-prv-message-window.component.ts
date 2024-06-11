@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { User } from '../../../../interface/user.interface';
 import { ToggleBooleanService } from '../../../../service/toggle-boolean.service';
-import { ChannleService } from '../../../../service/channle.service';
+import { ChannelService } from '../../../../service/channel.service';
 import { UserService } from '../../../../service/user.service';
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
@@ -25,7 +25,7 @@ export class OpenSendPrvMessageWindowComponent {
 
   constructor(
     public toggleBoolean: ToggleBooleanService,
-    private channelService: ChannleService,
+    private channelService: ChannelService,
     public userService: UserService,
     private route: Router
   ) {}

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { ChannleService } from '../../../../service/channle.service';
+import { ChannelService } from '../../../../service/channel.service';
 import { SmallBtnComponent } from '../../../../shared/components/small-btn/small-btn.component';
 import { FormsModule } from '@angular/forms';
 import { UserService } from '../../../../service/user.service';
@@ -37,7 +37,7 @@ export class AddNewChannelComponent {
   showNextWindowMobile: boolean = false;
 
   constructor(
-    public channelService: ChannleService,
+    public channelService: ChannelService,
     public userService: UserService,
     public route: Router,
     private sharedService: SharedService,

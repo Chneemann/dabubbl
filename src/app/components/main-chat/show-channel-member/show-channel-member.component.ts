@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SmallBtnComponent } from '../../../shared/components/small-btn/small-btn.component';
 import { User } from '../../../interface/user.interface';
 import { FormsModule } from '@angular/forms';
-import { ChannleService } from '../../../service/channle.service';
+import { ChannelService } from '../../../service/channel.service';
 import { UserService } from '../../../service/user.service';
 import { OpenSendPrvMessageWindowComponent } from './open-send-prv-message-window/open-send-prv-message-window.component';
 import { TranslateModule } from '@ngx-translate/core';
@@ -40,7 +40,7 @@ export class ShowChannelMemberComponent {
 
   constructor(
     public toggleBoolean: ToggleBooleanService,
-    public channelService: ChannleService,
+    public channelService: ChannelService,
     public userService: UserService
   ) {}
 

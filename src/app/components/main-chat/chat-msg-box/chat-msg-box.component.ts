@@ -16,7 +16,7 @@ import { EmojiPickerComponent } from '../../../shared/components/emoji-picker/em
 import { SmallBtnComponent } from '../../../shared/components/small-btn/small-btn.component';
 import { ChatService } from '../../../service/chat.service';
 import { Router } from '@angular/router';
-import { ChannleService } from '../../../service/channle.service';
+import { ChannelService } from '../../../service/channel.service';
 import { ToggleBooleanService } from '../../../service/toggle-boolean.service';
 import { User } from '../../../interface/user.interface';
 import { MessageData } from '../../../interface/chat.interface';
@@ -69,7 +69,7 @@ export class ChatMsgBoxComponent {
     private firestore: Firestore,
     public userService: UserService,
     private chatService: ChatService,
-    public channelService: ChannleService,
+    public channelService: ChannelService,
     public toggleBoolean: ToggleBooleanService,
     private sharedService: SharedService
   ) {}

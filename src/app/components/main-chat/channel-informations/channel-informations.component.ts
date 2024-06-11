@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Channel } from '../../../interface/channel.interface';
-import { ChannleService } from '../../../service/channle.service';
+import { ChannelService } from '../../../service/channel.service';
 import { UserService } from '../../../service/user.service';
 import { Router } from '@angular/router';
 import { User } from '../../../interface/user.interface';
@@ -40,7 +40,7 @@ export class ChannelInformationsComponent {
 
   constructor(
     private route: Router,
-    public channelService: ChannleService,
+    public channelService: ChannelService,
     public userService: UserService,
     private sharedService: SharedService
   ) {}

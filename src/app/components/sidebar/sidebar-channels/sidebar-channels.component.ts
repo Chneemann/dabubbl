@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ChannleService } from '../../../service/channle.service';
+import { ChannelService } from '../../../service/channel.service';
 import { Channel, publicChannels } from '../../../interface/channel.interface';
 import { RouterLink } from '@angular/router';
 import { ChatService } from '../../../service/chat.service';
@@ -33,7 +33,7 @@ export class SidebarChannelsComponent {
   minimizeChannels: boolean = true;
 
   constructor(
-    public channelService: ChannleService,
+    public channelService: ChannelService,
     public chatService: ChatService,
     public userService: UserService,
     public toggleBoolean: ToggleBooleanService,

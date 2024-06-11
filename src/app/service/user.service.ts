@@ -7,7 +7,7 @@ import {
   updateDoc,
 } from '@angular/fire/firestore';
 import { User } from '../interface/user.interface';
-import { ChannleService } from './channle.service';
+import { ChannelService } from './channel.service';
 import { getAuth, signOut } from 'firebase/auth';
 import { Router } from '@angular/router';
 import CryptoJS from 'crypto-es';
@@ -28,7 +28,7 @@ export class UserService implements OnDestroy {
 
   unsubUser;
 
-  constructor(private channelService: ChannleService, private route: Router) {
+  constructor(private channelService: ChannelService, private route: Router) {
     this.unsubUser = this.subUserList();
   }
 

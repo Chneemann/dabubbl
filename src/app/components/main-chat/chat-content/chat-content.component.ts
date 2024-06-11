@@ -14,7 +14,7 @@ import { SingleChatComponent } from '../single-chat/single-chat.component';
 import { ChatMsgBoxComponent } from '../chat-msg-box/chat-msg-box.component';
 import { CommonModule } from '@angular/common';
 import { DownloadFilesService } from '../../../service/download-files.service';
-import { ChannleService } from '../../../service/channle.service';
+import { ChannelService } from '../../../service/channel.service';
 import { InfoComponent } from '../info/info.component';
 
 @Component({
@@ -45,7 +45,7 @@ export class ChatContentComponent implements AfterViewInit, AfterViewChecked {
   constructor(
     private chatService: ChatService,
     private userService: UserService,
-    public channelService: ChannleService,
+    public channelService: ChannelService,
     private downloadFilesService: DownloadFilesService,
     private renderer: Renderer2
   ) {}

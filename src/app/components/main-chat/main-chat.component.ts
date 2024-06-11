@@ -1,5 +1,5 @@
-import { Component, ElementRef, Input } from '@angular/core';
-import { ChannleService } from '../../service/channle.service';
+import { Component, Input } from '@angular/core';
+import { ChannelService } from '../../service/channel.service';
 import { MainComponent } from '../main/main.component';
 import { ChatService } from '../../service/chat.service';
 import { UserService } from '../../service/user.service';
@@ -9,7 +9,6 @@ import {
   PrvChannel,
   publicChannels,
 } from '../../interface/channel.interface';
-import { Chat } from '../../interface/chat.interface';
 import { NavigationStart, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ChatContentComponent } from './chat-content/chat-content.component';
@@ -61,7 +60,7 @@ export class MainChatComponent {
   constructor(
     private route: Router,
     public userService: UserService,
-    public channelService: ChannleService,
+    public channelService: ChannelService,
     public chatService: ChatService,
     public toggleBoolean: ToggleBooleanService,
     private sharedService: SharedService

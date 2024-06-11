@@ -7,7 +7,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { UserService } from '../../service/user.service';
-import { ChannleService } from '../../service/channle.service';
+import { ChannelService } from '../../service/channel.service';
 import { ChatService } from '../../service/chat.service';
 import { MainComponent } from '../main/main.component';
 import { SingleChatComponent } from '../main-chat/single-chat/single-chat.component';
@@ -38,7 +38,7 @@ export class SecondaryChatComponent implements AfterViewChecked {
 
   constructor(
     public userService: UserService,
-    public channelService: ChannleService,
+    public channelService: ChannelService,
     public chatService: ChatService,
     private renderer: Renderer2
   ) {}

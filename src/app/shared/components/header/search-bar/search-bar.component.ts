@@ -5,7 +5,7 @@ import { Channel } from '../../../../interface/channel.interface';
 import { Chat } from '../../../../interface/chat.interface';
 import { UserService } from '../../../../service/user.service';
 import { ToggleBooleanService } from '../../../../service/toggle-boolean.service';
-import { ChannleService } from '../../../../service/channle.service';
+import { ChannelService } from '../../../../service/channel.service';
 import { ChatService } from '../../../../service/chat.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router, RouterLink } from '@angular/router';
@@ -43,7 +43,7 @@ export class SearchBarComponent {
   constructor(
     public userService: UserService,
     public toggleBoolean: ToggleBooleanService,
-    private channelService: ChannleService,
+    private channelService: ChannelService,
     private chatService: ChatService,
     public sanitizer: DomSanitizer,
     private route: Router,

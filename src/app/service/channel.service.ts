@@ -17,7 +17,7 @@ import { ChatService } from './chat.service';
 @Injectable({
   providedIn: 'root',
 })
-export class ChannleService implements OnDestroy {
+export class ChannelService implements OnDestroy {
   firestore: Firestore = inject(Firestore);
 
   allChannels: Channel[] = [];
@@ -44,7 +44,7 @@ export class ChannleService implements OnDestroy {
    * @param path Path of the collection in Firestore.
    * @returns Firestore collection reference.
    */
-  firesorePath(path: string) {
+  firestorePath(path: string) {
     return collection(this.firestore, path);
   }
 
@@ -53,7 +53,7 @@ export class ChannleService implements OnDestroy {
    * @returns Unsubscribe function.
    */
   subChannelList() {
-    return onSnapshot(this.firesorePath('channels'), (list) => {
+    return onSnapshot(this.firestorePath('channels'), (list) => {
       this.allChannels = [];
       list.forEach((element) => {
         const channelWithId = { id: element.id, ...element.data() } as Channel;
@@ -67,7 +67,7 @@ export class ChannleService implements OnDestroy {
    * @returns Unsubscribe function.
    */
   subPrvChannelList() {
-    return onSnapshot(this.firesorePath('prv-channels'), (list) => {
+    return onSnapshot(this.firestorePath('prv-channels'), (list) => {
       this.allPrvChannels = [];
       list.forEach((element) => {
         const channelWithId = {
@@ -107,7 +107,7 @@ export class ChannleService implements OnDestroy {
     path: string
   ): Promise<string | undefined> {
     try {
-      const docRef = await addDoc(this.firesorePath(path), newChannel);
+      const docRef = await addDoc(this.firestorePath(path), newChannel);
       this.chatService.getPrvChatId = docRef.id;
       return docRef.id;
     } catch (err) {

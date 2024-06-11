@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ChannleService } from '../../../service/channle.service';
+import { ChannelService } from '../../../service/channel.service';
 import { UserService } from '../../../service/user.service';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -14,7 +14,7 @@ export class InfoComponent {
   @Input() currentChannel: string = '';
 
   constructor(
-    private channelService: ChannleService,
+    private channelService: ChannelService,
     public userService: UserService
   ) {}
 

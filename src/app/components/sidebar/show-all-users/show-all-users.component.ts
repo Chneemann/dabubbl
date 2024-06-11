@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { UserService } from '../../../service/user.service';
 import { User } from '../../../interface/user.interface';
-import { ChannleService } from '../../../service/channle.service';
+import { ChannelService } from '../../../service/channel.service';
 import { Router } from '@angular/router';
 import { SmallBtnComponent } from '../../../shared/components/small-btn/small-btn.component';
 import { ChatService } from '../../../service/chat.service';
@@ -24,7 +24,7 @@ export class ShowAllUsersComponent {
   constructor(
     public userService: UserService,
     private route: Router,
-    private channelService: ChannleService,
+    private channelService: ChannelService,
     private chatService: ChatService,
     public toggleBoolean: ToggleBooleanService,
     private sharedService: SharedService

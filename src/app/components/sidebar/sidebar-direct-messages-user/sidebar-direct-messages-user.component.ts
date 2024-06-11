@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { UserService } from '../../../service/user.service';
 import { CommonModule } from '@angular/common';
-import { ChannleService } from '../../../service/channle.service';
+import { ChannelService } from '../../../service/channel.service';
 import { RouterLink } from '@angular/router';
 import { ChatService } from '../../../service/chat.service';
 import { ToggleBooleanService } from '../../../service/toggle-boolean.service';
@@ -22,7 +22,7 @@ export class SidebarDirectMessagesUserComponent {
 
   constructor(
     public userService: UserService,
-    private channelService: ChannleService,
+    private channelService: ChannelService,
     public chatService: ChatService,
     public toggleBoolean: ToggleBooleanService,
     private sharedService: SharedService

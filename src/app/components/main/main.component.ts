@@ -15,7 +15,7 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 import { MainChatComponent } from '../main-chat/main-chat.component';
 import { SecondaryChatComponent } from '../secondary-chat/secondary-chat.component';
 import { ChatService } from '../../service/chat.service';
-import { ChannleService } from '../../service/channle.service';
+import { ChannelService } from '../../service/channel.service';
 import { SidebarToggleComponent } from '../sidebar/sidebar-toggle/sidebar-toggle.component';
 import { CommonModule } from '@angular/common';
 import { AddNewChannelComponent } from '../sidebar/sidebar-channels/add-new-channel/add-new-channel.component';
@@ -44,7 +44,7 @@ export class MainComponent implements OnInit {
   constructor(
     public userService: UserService,
     public chatService: ChatService,
-    public channelService: ChannleService,
+    public channelService: ChannelService,
     private router: Router,
     private route: ActivatedRoute,
     public toggleAllBooleans: ToggleBooleanService,

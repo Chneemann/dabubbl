@@ -10,7 +10,7 @@ import {
 import { EditUserComponent } from '../edit-user.component';
 import { UserService } from '../../../../../service/user.service';
 import { FormsModule, NgForm } from '@angular/forms';
-import { ChannleService } from '../../../../../service/channle.service';
+import { ChannelService } from '../../../../../service/channel.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { SmallBtnComponent } from '../../../small-btn/small-btn.component';
 
@@ -43,7 +43,7 @@ export class EditUserDetailsComponent {
 
   constructor(
     public userService: UserService,
-    public channelService: ChannleService
+    public channelService: ChannelService
   ) {}
 
   /** Filters whether the user is a guest. */

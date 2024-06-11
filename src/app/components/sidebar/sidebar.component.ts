@@ -4,7 +4,7 @@ import { SidebarChannelsComponent } from './sidebar-channels/sidebar-channels.co
 import { SidebarDirectMessagesComponent } from './sidebar-direct-messages/sidebar-direct-messages.component';
 import { SmallBtnComponent } from '../../shared/components/small-btn/small-btn.component';
 import { CommonModule } from '@angular/common';
-import { ChannleService } from '../../service/channle.service';
+import { ChannelService } from '../../service/channel.service';
 import { ToggleBooleanService } from '../../service/toggle-boolean.service';
 import { ChatService } from '../../service/chat.service';
 import { SharedService } from '../../service/shared.service';
@@ -30,7 +30,7 @@ export class SidebarComponent implements OnInit {
   currentChannel: string = '';
 
   constructor(
-    public channelService: ChannleService,
+    public channelService: ChannelService,
     public toggleBoolean: ToggleBooleanService,
     private router: ActivatedRoute,
     public chatService: ChatService,
