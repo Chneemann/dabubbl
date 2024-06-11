@@ -37,7 +37,6 @@ export class ChatService implements OnDestroy {
     this.unsubChatReactions = this.subChatListReactions();
   }
 
-
   /**
    * Subscribes to the chat list collection in Firestore and updates the local chat list accordingly.
    * @returns A function to unsubscribe from the chat list.
@@ -57,7 +56,6 @@ export class ChatService implements OnDestroy {
     });
   }
 
-
   /**
    * Subscribes to the chat answers list collection in Firestore and updates the local chat answers list accordingly.
    * @returns A function to unsubscribe from the chat answers list.
@@ -71,7 +69,6 @@ export class ChatService implements OnDestroy {
       });
     });
   }
-
 
   /**
    * Subscribes to the chat reactions list collection in Firestore and updates the local chat reactions list accordingly.
@@ -90,7 +87,6 @@ export class ChatService implements OnDestroy {
     });
   }
 
-
   /**
    * Updates the specified chat document with the provided data.
    * @param chatId The ID of the chat document to update.
@@ -105,7 +101,6 @@ export class ChatService implements OnDestroy {
     });
   }
 
-
   /**
    * Updates the reaction document with the specified ID with the provided array of user IDs.
    * @param reactionId The ID of the reaction document to update.
@@ -119,7 +114,6 @@ export class ChatService implements OnDestroy {
     });
   }
 
-
   /**
    * Creates a new reaction document with the provided data.
    * @param reaction The reaction data to add to Firestore.
@@ -131,7 +125,6 @@ export class ChatService implements OnDestroy {
       }
     );
   }
-
 
   /**
    * Deletes a document from the specified Firestore collection.
@@ -146,7 +139,6 @@ export class ChatService implements OnDestroy {
     );
   }
 
-
   /**
    * Retrieves chat answers associated with the specified chat ID.
    * @param chatId The ID of the chat to retrieve answers for.
@@ -158,7 +150,6 @@ export class ChatService implements OnDestroy {
     );
     return filteredTasks;
   }
-
 
   /**
    * Toggles the secondary chat window based on the provided chat ID.
@@ -179,7 +170,6 @@ export class ChatService implements OnDestroy {
       this.isSecondaryChatId = chatId;
     }
   }
-
 
   /**
    * Unsubscribes from all Firestore subscriptions when the service is destroyed.

@@ -136,7 +136,7 @@
 
   "add-new-channel": {
     "header": "Create Channel",
-    "info": "Channels serve your team for communication. They should be topic-related, e.g., #marketing.",
+    "info": "Channels serve your team for communication. Ideally, they should be topic-related, such as #marketing.",
     "header2": "Channel Name",
     "required": "(required)",
     "placeholder": "(at least 6 characters)",

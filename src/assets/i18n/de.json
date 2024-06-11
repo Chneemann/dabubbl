@@ -136,7 +136,7 @@
 
   "add-new-channel": {
     "header": "Kanal erstellen",
-    "info": "Kanäle dienen ihrem Team zur Kommunikation. Am besten sollten sie themenbezogen sein #marketing zum Beispiel.",
+    "info": "Kanäle dienen Ihrem Team zur Kommunikation. Am besten sollten sie themenbezogen sein, wie zum Beispiel der Kanal #marketing.",
     "header2": "Kanal-Name",
     "required": "(erforderlich)",
     "placeholder": "(mind. 6 Buchstaben)",

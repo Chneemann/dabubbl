@@ -120,7 +120,10 @@ export class SingleChatComponent {
    */
   displayLastChatAnswer() {
     const getChatAnswers = this.chatService.getChatAnswers(this.chat.id);
-    const lastChatAnswer = getChatAnswers[getChatAnswers.length - 1];
+    const sortedAnswers = getChatAnswers.sort((a, b) => {
+      return a.publishedTimestamp - b.publishedTimestamp;
+    });
+    const lastChatAnswer = sortedAnswers[getChatAnswers.length - 1];
     if (lastChatAnswer) {
       return this.convertTimestampHour(lastChatAnswer.publishedTimestamp);
     }

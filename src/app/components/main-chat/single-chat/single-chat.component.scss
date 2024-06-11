@@ -7,10 +7,8 @@ section {
   position: relative;
   &:hover {
     background-color: #edeefe;
-    .userContent {
-      .content {
-        background-color: #fff;
-      }
+    .content {
+      background-color: #fff;
     }
   }
 }
