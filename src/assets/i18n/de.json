@@ -3,20 +3,20 @@
     "header": "Anmeldung",
     "infoText": "Wir empfehlen dir, die E-Mail-Adresse zu nutzen, die du bei der Arbeit verwendest.",
     "inputField": "beispielname@email.com",
-    "inputField2": "Passwort",
+    "inputField1": "Passwort",
     "midText": "Passwort vergessen?",
-    "midSeperator": "ODER",
+    "midSeparator": "ODER",
     "googleBtn": "Anmeldung mit Google",
     "BtnLeft": "Anmelden",
     "BtnRight": "Gäste-Login",
     "topText": "Neu bei DABubble?",
     "topText2": "Konto erstellen",
-    "errorText": "*Email ist erforderlich.",
-    "errorText2": "*Passwort ist erforderlich.",
-    "errorText3": "*Ungültige Anmeldeinformationen.",
-    "errorText4": "*Zuviele fehlgeschlagener Anmeldeversuche.",
-    "errorText5": "*Bitte Überprüfe deine Eingaben.",
-    "errorText6": "*Bitte versuchen Sie es später erneut.",
+    "errorText": "Email ist erforderlich.",
+    "errorText2": "Passwort ist erforderlich.",
+    "errorText3": "Ungültige Anmeldeinformationen.",
+    "errorText4": "Zu viele fehlgeschlagener Anmeldeversuche.",
+    "errorText5": "Bitte Überprüfe deine Eingaben.",
+    "errorText6": "Bitte versuchen Sie es später erneut.",
     "loginDialog0": "Einloggen",
     "loginDialog1": "Bitte warten..."
   },
@@ -31,9 +31,9 @@
     "midText2": "Datenschutzerklärung",
     "midText3": "zu.",
     "Btn": "Weiter",
-    "errorText": "*Name ist erforderlich.",
-    "errorText2": "*Email ist erforderlich.",
-    "errorText3": "*Bitte geben Sie ein Passwort ein (mind. 6 Zeichen)."
+    "errorText": "Name ist erforderlich.",
+    "errorText2": "Email ist erforderlich.",
+    "errorText3": "Bitte geben Sie ein Passwort ein (mind. 6 Zeichen)."
   },
 
   "chooseAvatar": {
@@ -47,27 +47,27 @@
   "passwordForget": {
     "header": "Passwort zurücksetzen",
     "infoText": "Bitte geben Sie Ihre E-Mail-Adresse ein.",
-    "inputfield": "beispielname@email.com",
+    "inputField": "beispielname@email.com",
     "infoTextBottom": "Wir senden Ihnen eine E-Mail, Über die Sie Ihr Passwort ändern können.",
     "Btn": "E-Mail senden",
-    "errorText": "*Email ist erforderlich."
+    "errorText": "Email ist erforderlich."
   },
 
   "passwordReset": {
     "header": "Passwort zurücksetzen",
-    "inputfield": "Neues Passwort",
-    "inputfield2": "Neues Passwort bestätigen",
+    "inputField": "Neues Passwort",
+    "inputField2": "Neues Passwort bestätigen",
     "Btn": "Passwort ändern",
-    "errorText": "*Bitte geben Sie ein neus Passwort ein (mind.6 Zeichen).",
-    "errorText2": "*Die Passwörter stimmen nicht überein."
+    "errorText": "Bitte geben Sie ein neues Passwort ein (mind.6 Zeichen).",
+    "errorText2": "Die Passwörter stimmen nicht überein."
   },
 
-  "channel-informations": {
+  "channel-information": {
     "header": "Kanal Name",
     "channelInfo": "Beschreibung",
     "channelInfo2": "keine Beschreibung.",
     "channelMadeBy": "Erstellt von",
-    "channelErrorText": "*Nur der Ersteller kann den Kanal bearbeiten",
+    "channelErrorText": "Nur der Ersteller kann den Kanal bearbeiten",
     "members": "Mitglieder",
     "leave": "Kanal verlassen"
   },
@@ -97,7 +97,7 @@
     "profil": "Profil",
     "aktiv": "Aktiv",
     "offline": "Offline",
-    "adress": "E-Mail-Address",
+    "address": "E-Mail Adresse",
     "message": "Nachricht"
   },
 
@@ -136,7 +136,7 @@
 
   "add-new-channel": {
     "header": "Kanal erstellen",
-    "info": "Kanäls dienen ihrem Team zur Kommuniktaion. Am besten sollten sie themenbezogen sein #marketing zum Beispiel.",
+    "info": "Kanäle dienen ihrem Team zur Kommunikation. Am besten sollten sie themenbezogen sein #marketing zum Beispiel.",
     "header2": "Kanal-Name",
     "required": "(erforderlich)",
     "placeholder": "(mind. 6 Buchstaben)",
@@ -174,15 +174,15 @@
     "fullName": "Vollständiger Name",
     "placeholder": "Ihr Name (min. 3 Buchstaben)",
     "placeholder2": "Ihre E-Mail-Adresse",
-    "email": "E-Mail-Addresse",
+    "email": "E-Mail Adresse",
     "cancel": "Abbrechen",
     "save": "Speichern",
-    "errorMessage": "* Änderungen am Gast Profil sind nicht möglich."
+    "errorMessage": "Änderungen am Gast Profil sind nicht möglich."
   },
 
   "edit-user": {
     "edit": "bearbeiten",
-    "email": "E-Mail-Addresse"
+    "email": "E-Mail Adresse"
   },
 
   "search-bar": {
@@ -212,7 +212,7 @@
   },
 
   "user": {
-    "email": "E-Mail-Addresse",
+    "email": "E-Mail Adresse",
     "message": "Direktnachrichten"
   },
 

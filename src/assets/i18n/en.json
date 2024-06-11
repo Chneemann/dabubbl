@@ -5,18 +5,18 @@
     "inputField": "example.name@email.com",
     "inputField2": "Password",
     "midText": "Forgot password?",
-    "midSeperator": "OR",
+    "midSeparator": "OR",
     "googleBtn": "Sign in with Google",
     "BtnLeft": "Login",
     "BtnRight": "Guest Login",
     "topText": "New to DABubble?",
     "topText2": "Create account",
-    "errorText": "*Email is required.",
-    "errorText2": "*Password is required.",
-    "errorText3": "*Invalid login credentials.",
-    "errorText4": "*Too many failed login attempts.",
-    "errorText5": "*Please check your entries.",
-    "errorText6": "*Please try again later.",
+    "errorText": "Email is required.",
+    "errorText2": "Password is required.",
+    "errorText3": "Invalid login credentials.",
+    "errorText4": "Too many failed login attempts.",
+    "errorText5": "Please check your entries.",
+    "errorText6": "Please try again later.",
     "loginDialog0": "Logging in",
     "loginDialog1": "Please wait..."
   },
@@ -31,9 +31,9 @@
     "midText2": "Privacy Policy",
     "midText3": ".",
     "Btn": "Continue",
-    "errorText": "*Name is required.",
-    "errorText2": "*Email is required.",
-    "errorText3": "*Please enter a password (at least 6 characters)."
+    "errorText": "Name is required.",
+    "errorText2": "Email is required.",
+    "errorText3": "Please enter a password (at least 6 characters)."
   },
 
   "chooseAvatar": {
@@ -47,27 +47,27 @@
   "passwordForget": {
     "header": "Reset Password",
     "infoText": "Please enter your email address.",
-    "inputfield": "example.name@email.com",
+    "inputField": "example.name@email.com",
     "infoTextBottom": "We will send you an email to change your password.",
     "Btn": "Send Email",
-    "errorText": "*Email is required."
+    "errorText": "Email is required."
   },
 
   "passwordReset": {
     "header": "Reset Password",
-    "inputfield": "New Password",
-    "inputfield2": "Confirm New Password",
+    "inputField": "New Password",
+    "inputField2": "Confirm New Password",
     "Btn": "Change Password",
-    "errorText": "*Please enter a new password (at least 6 characters).",
-    "errorText2": "*The passwords do not match."
+    "errorText": "Please enter a new password (at least 6 characters).",
+    "errorText2": "The passwords do not match."
   },
 
-  "channel-informations": {
+  "channel-information": {
     "header": "Channel Name",
     "channelInfo": "Description",
     "channelInfo2": "no description.",
     "channelMadeBy": "Created by",
-    "channelErrorText": "*Only the creator can edit the channel",
+    "channelErrorText": "Only the creator can edit the channel",
     "members": "Members",
     "leave": "Leave Channel"
   },
@@ -97,7 +97,7 @@
     "profil": "Profile",
     "aktiv": "Active",
     "offline": "Offline",
-    "adress": "Email Address",
+    "address": "Email Address",
     "message": "Message"
   },
 
@@ -123,7 +123,7 @@
 
   "single-chat": {
     "edit": "(edited)",
-    "answer": "Replys",
+    "answer": "Reply's",
     "answer2": "Reply",
     "answer3": "Last reply:",
     "answer4": "Reply..."
@@ -177,7 +177,7 @@
     "email": "Email Address",
     "cancel": "Cancel",
     "save": "Save",
-    "errorMessage": "* Changes to the guest profile are not possible."
+    "errorMessage": "Changes to the guest profile are not possible."
   },
 
   "edit-user": {
