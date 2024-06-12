@@ -4,7 +4,7 @@ import { Chat, ChatAnswers } from '../../../interface/chat.interface';
 import { ChatContentComponent } from '../chat-content/chat-content.component';
 import { CommonModule, NgSwitchCase } from '@angular/common';
 import { ChatService } from '../../../service/chat.service';
-import { DownloadFilesService } from '../../../service/download-files.service';
+import { DownloadFilesService } from '../../../service/files.service';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { OptionsMenuComponent } from './options-menu/options-menu.component';
 import { AttachmentsComponent } from './attachments/attachments.component';
@@ -62,16 +62,6 @@ export class SingleChatComponent {
     public userService: UserService,
     public downloadFilesService: DownloadFilesService
   ) {}
-
-  ngOnInit() {
-    this.checkChatHasFiles();
-  }
-
-  async checkChatHasFiles() {
-    this.filePath = await this.downloadFilesService.checkChatHasFiles(
-      this.chat.id
-    );
-  }
 
   /**
    * Emits a signal to edit a message.

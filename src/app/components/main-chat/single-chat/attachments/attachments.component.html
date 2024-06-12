@@ -1,9 +1,8 @@
-@if(imageUrl) {
 <div class="files">
   <div class="filesView">
-    @if (['png', 'jpg', 'jpeg', 'gif'].includes(getFileType(imageUrl))) {
+    @if (['png', 'jpg', 'jpeg', 'gif'].includes(getFileType(filePath))) {
     <img
-      src="{{ imageUrl }}"
+      src="{{ filePath }}"
       alt="image"
       [ngStyle]="{
         height:
@@ -11,13 +10,13 @@
             ? '5vw'
             : '7.5vw'
       }"
-      (click)="showOverlay(imageUrl)"
+      (click)="showOverlay(filePath)"
     />
-    } @if (['pdf', 'doc', 'txt'].includes(getFileType(imageUrl))) {
-    <a href="{{ imageUrl }}" target="_blank">
+    } @if (['pdf', 'doc', 'txt'].includes(getFileType(filePath))) {
+    <a href="{{ filePath }}" target="_blank">
       <img
         class="otherFiles"
-        src="./assets/img/attachments/{{ getFileType(imageUrl) }}.png"
+        src="./assets/img/attachments/{{ getFileType(filePath) }}.png"
         alt="image"
         [ngStyle]="{
           height:
@@ -26,11 +25,11 @@
               : '5vw'
         }"
     /></a>
-    } @if (['mp3', 'wav', 'wma'].includes(getFileType(imageUrl))) {
+    } @if (['mp3', 'wav', 'wma'].includes(getFileType(filePath))) {
     <audio
       controls
       preload="auto"
-      src="{{ imageUrl }}"
+      src="{{ filePath }}"
       [ngStyle]="{
         width:
           openOnSecondaryChat && viewWidth >= RESPONSIVE_THRESHOLD
@@ -38,10 +37,10 @@
             : ''
       }"
     ></audio>
-    }@if (getFileType(imageUrl) === 'mp4') {
-    <div (click)="showOverlay(imageUrl)">
+    }@if (getFileType(filePath) === 'mp4') {
+    <div (click)="showOverlay(filePath)">
       <video
-        src="{{ imageUrl }}"
+        src="{{ filePath }}"
         alt="video"
         [ngStyle]="{
           height:
@@ -54,4 +53,3 @@
     }
   </div>
 </div>
-}

@@ -10,7 +10,7 @@ import {
 import { FormsModule } from '@angular/forms';
 import { PickerComponent } from '@ctrl/ngx-emoji-mart';
 import { Firestore, addDoc, collection } from '@angular/fire/firestore';
-import { DownloadFilesService } from '../../../service/download-files.service';
+import { DownloadFilesService } from '../../../service/files.service';
 import { UserService } from '../../../service/user.service';
 import { EmojiPickerComponent } from '../../../shared/components/emoji-picker/emoji-picker.component';
 import { SmallBtnComponent } from '../../../shared/components/small-btn/small-btn.component';

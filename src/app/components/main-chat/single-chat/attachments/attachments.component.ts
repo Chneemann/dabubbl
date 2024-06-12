@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { DownloadFilesService } from '../../../../service/download-files.service';
+import { DownloadFilesService } from '../../../../service/files.service';
 import { OverlayService } from '../../../../service/overlay.service';
 import { OverlayComponent } from '../../../../shared/components/overlay/overlay.component';
 import { SharedService } from '../../../../service/shared.service';
@@ -18,7 +18,6 @@ export class AttachmentsComponent {
   @Input() openOnSecondaryChat: boolean = false;
   @Input() viewWidth: number = 0;
   loadingUrl: string = './../../../assets/img/loading.svg';
-  imageUrl: string | null = '';
 
   constructor(
     public downloadFilesService: DownloadFilesService,
@@ -27,14 +26,6 @@ export class AttachmentsComponent {
   ) {}
 
   RESPONSIVE_THRESHOLD = this.sharedService.RESPONSIVE_THRESHOLD;
-
-  async ngOnInit() {
-    if (this.filePath) {
-      this.imageUrl = await this.downloadFilesService.downloadFiles(
-        this.filePath
-      );
-    }
-  }
 
   // Type of files:
   // Img: PNG, GIF, JPG, JPEG

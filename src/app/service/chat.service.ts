@@ -11,6 +11,12 @@ import {
   updateDoc,
 } from '@angular/fire/firestore';
 import { Chat, ChatAnswers, ChatReactions } from '../interface/chat.interface';
+import {
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytes,
+} from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root',
@@ -26,6 +32,7 @@ export class ChatService implements OnDestroy {
   getChannelId: string = '';
   getPrvChatId: string = '';
   inputValue: string = '';
+  fileSrc: string = '';
 
   unsubChat;
   unsubChatAnswers;
@@ -101,6 +108,14 @@ export class ChatService implements OnDestroy {
     });
   }
 
+  async updateChatFile(chatId: string, chatFile: string) {
+    await updateDoc(doc(collection(this.firestore, 'chats'), chatId), {
+      attachments: chatFile,
+    }).catch((err) => {
+      console.error(err);
+    });
+  }
+
   /**
    * Updates the reaction document with the specified ID with the provided array of user IDs.
    * @param reactionId The ID of the reaction document to update.
@@ -169,6 +184,24 @@ export class ChatService implements OnDestroy {
     if (this.isSecondaryChatOpen) {
       this.isSecondaryChatId = chatId;
     }
+  }
+
+  uploadFile(file: File) {
+    const storage = getStorage();
+    const storageRef = ref(storage, 'chatFiles/' + file.name);
+    uploadBytes(storageRef, file)
+      .then((snapshot) => {
+        getDownloadURL(storageRef)
+          .then((url) => {
+            this.fileSrc = url;
+          })
+          .catch((error) =>
+            console.error('Error retrieving the download URL:', error)
+          );
+      })
+      .catch((error) => {
+        console.error('Upload error:', error);
+      });
   }
 
   /**

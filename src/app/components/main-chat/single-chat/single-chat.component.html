@@ -89,12 +89,12 @@
           <span>{{ "single-chat.edit" | translate }}</span>
           }
         </div>
-        @if(filePath) {
+        @if(chat.attachments) {
         <app-attachments
           [chatId]="chat.id"
           [openOnSecondaryChat]="openOnSecondaryChat"
           [viewWidth]="viewWidth"
-          [filePath]="filePath"
+          [filePath]="chat.attachments"
         ></app-attachments>
         }
       </div>

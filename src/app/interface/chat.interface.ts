@@ -1,10 +1,12 @@
 export interface Chat {
   id: string;
   userId: string;
+  chatId: string;
   channelId: string;
   message: string;
   edited: boolean;
   publishedTimestamp: number;
+  attachments: string;
 }
 
 export interface ChatAnswers {
@@ -14,6 +16,7 @@ export interface ChatAnswers {
   edited: boolean;
   publishedTimestamp: number;
   userId: string;
+  attachments: string;
 }
 
 export interface ChatReactions {

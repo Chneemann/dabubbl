@@ -13,7 +13,7 @@ import { UserService } from '../../../service/user.service';
 import { SingleChatComponent } from '../single-chat/single-chat.component';
 import { ChatMsgBoxComponent } from '../chat-msg-box/chat-msg-box.component';
 import { CommonModule } from '@angular/common';
-import { DownloadFilesService } from '../../../service/download-files.service';
+import { DownloadFilesService } from '../../../service/files.service';
 import { ChannelService } from '../../../service/channel.service';
 import { InfoComponent } from '../info/info.component';
 
@@ -30,7 +30,7 @@ import { InfoComponent } from '../info/info.component';
   templateUrl: './chat-content.component.html',
   styleUrl: './chat-content.component.scss',
 })
-export class ChatContentComponent implements AfterViewInit, AfterViewChecked {
+export class ChatContentComponent implements AfterViewInit {
   @Input() currentChannel: string = '';
   @Input() isPrivatChannel: boolean = false;
   @Input() isSearchChannel: boolean = false;
@@ -46,20 +46,11 @@ export class ChatContentComponent implements AfterViewInit, AfterViewChecked {
     private chatService: ChatService,
     private userService: UserService,
     public channelService: ChannelService,
-    private downloadFilesService: DownloadFilesService,
     private renderer: Renderer2
   ) {}
 
   ngAfterViewInit() {
     this.scrollToBottom();
-    this.checkIfLoadedFirebaseFiles();
-  }
-
-  ngAfterViewChecked() {
-    if (this.filesLoaded) {
-      this.scrollToBottom();
-      this.filesLoaded = false;
-    }
   }
 
   /**
@@ -71,17 +62,6 @@ export class ChatContentComponent implements AfterViewInit, AfterViewChecked {
     if (this.isNewMessage) {
       this.scrollToBottom();
     }
-  }
-
-  /**
-   * Checks whether Firebase files have been loaded from the server
-   */
-  checkIfLoadedFirebaseFiles() {
-    this.downloadFilesService.downloadedFiles.subscribe((files) => {
-      if (files.length > 0) {
-        this.filesLoaded = true;
-      }
-    });
   }
 
   /**
