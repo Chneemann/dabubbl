@@ -50,7 +50,9 @@ export class ChatContentComponent implements AfterViewInit {
   ) {}
 
   ngAfterViewInit() {
-    this.scrollToBottom();
+    setTimeout(() => {
+      this.scrollToBottom();
+    }, 0);
   }
 
   /**
