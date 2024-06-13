@@ -12,7 +12,7 @@
       }"
       (click)="showOverlay(filePath)"
     />
-    } @if (['pdf', 'doc', 'txt'].includes(getFileType(filePath))) {
+    } @if (['pdf', 'doc', 'docx'].includes(getFileType(filePath))) {
     <a href="{{ filePath }}" target="_blank">
       <img
         class="otherFiles"
@@ -25,7 +25,7 @@
               : '5vw'
         }"
     /></a>
-    } @if (['mp3', 'wav', 'wma'].includes(getFileType(filePath))) {
+    } @if (['mp3', 'wav'].includes(getFileType(filePath))) {
     <audio
       controls
       preload="auto"
@@ -37,7 +37,7 @@
             : ''
       }"
     ></audio>
-    }@if (getFileType(filePath) === 'mp4') {
+    } @if (['mp4', 'wmv', 'avi'].includes(getFileType(filePath))) {
     <div (click)="showOverlay(filePath)">
       <video
         src="{{ filePath }}"

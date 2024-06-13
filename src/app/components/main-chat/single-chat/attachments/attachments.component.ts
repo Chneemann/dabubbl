@@ -27,12 +27,6 @@ export class AttachmentsComponent {
 
   RESPONSIVE_THRESHOLD = this.sharedService.RESPONSIVE_THRESHOLD;
 
-  // Type of files:
-  // Img: PNG, GIF, JPG, JPEG
-  // Files: PDF, DOC, TXT
-  // Audio: MP3, WMA, WAV
-  // Video: MP4
-
   /**
    * Gets the file type from the given file name.
    * @param {string} file - The name of the file.
