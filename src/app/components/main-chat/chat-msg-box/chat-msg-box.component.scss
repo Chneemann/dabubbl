@@ -67,8 +67,8 @@ app-small-btn {
   border-radius: 10px;
   padding: 5px 10px;
   background-color: #eee;
-  max-width: 40px;
-  max-height: 20px;
+  width: 40px;
+  height: 20px;
   margin-right: 12px;
   position: relative;
   @include displayFlex();
@@ -87,7 +87,7 @@ app-emoji-picker {
 }
 
 .positionDataFromPc {
-  margin-top: -40px;
+  margin-top: -32px;
   display: flex;
   width: 60px;
 }
@@ -114,19 +114,6 @@ app-emoji-picker {
   height: 100vh;
 }
 
-.showWarningNotice {
-  animation: shwoWN 0.3s ease-in-out;
-}
-
-@keyframes shwoWN {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .positionOfAllUsersInBox {
   position: absolute;
   bottom: 36px;
@@ -147,22 +134,18 @@ app-emoji-picker {
     padding: 6px;
     cursor: pointer;
     transition: 0.2s ease-in-out;
-
     &:hover {
       background-color: #edeefe;
       border-radius: 25px;
     }
-
-    .positionImgs {
+    .positionImg {
       @include displayFlex($a: flex-end);
-
       .avatarImg {
         width: 40px;
         height: 40px;
         object-fit: cover;
         border-radius: 50%;
       }
-
       .onlineIcon {
         width: 12px;
         height: 12px;
@@ -208,7 +191,7 @@ app-emoji-picker {
       background-color: #edeefe;
       border-radius: 25px;
     }
-    .positionImgs2 {
+    .positionImg2 {
       @include displayFlex($a: flex-end);
       .avatarImg2 {
         width: 40px;

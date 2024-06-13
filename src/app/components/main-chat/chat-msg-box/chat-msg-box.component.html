@@ -62,12 +62,22 @@
         [btnBgHoverColor]="'#edeefe'"
         (click)="targetChatUser($event)"
       ></app-small-btn>
+      <!-- Warning message -->
+      @if (downloadFilesService.uploadFiles.length >= 1){
+      <p class="warningMessage">
+        {{ "channel-msg-box.text0" | translate }}
+      </p>
+      } @if(fileDataError){
+      <p class="warningMessage">
+        {{ "channel-msg-box.text1" | translate }}
+      </p>
+      }
       <div class="filteredElementWindow">
         @if (toggleBoolean.selectUserInMsgBox) {
         <div class="positionOfAllUsersInBox">
           @for(user of userService.getFiltertUsers; track user){
           <div class="user" (click)="chooseUser(user)">
-            <div class="positionImgs">
+            <div class="positionImg">
               <img src="{{ user.avatar }}" class="avatarImg" />
               <img
                 src="./assets/img/{{
@@ -82,15 +92,6 @@
         </div>
         }
       </div>
-      } @if(downloadFilesService.uploadFiles.length >= 1){
-      <p
-        [ngClass]="{
-          showWarningNotice: downloadFilesService.uploadFiles.length >= 1
-        }"
-        class="warningMessage"
-      >
-        {{ "channel-msg-box.text" | translate }}
-      </p>
       }
     </div>
     @if(textArea == ''){
@@ -110,7 +111,7 @@
       <h3 class="user2" (click)="chooseElement(i)">{{ i.name }}</h3>
       } }@else if (showUsers) { @for (i of userService.allUsers; track $index) {
       <div class="user2" (click)="chooseElement(i)">
-        <div class="positionImgs2">
+        <div class="positionImg2">
           <img src="{{ i.avatar }}" class="avatarImg2" />
           <img
             src="./assets/img/{{

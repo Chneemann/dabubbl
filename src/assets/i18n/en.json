@@ -73,7 +73,8 @@
   },
 
   "channel-msg-box": {
-    "text": "The maximum number of files is 1.",
+    "text0": "Maximum one file per message",
+    "text1": "This file format is invalid",
     "placeholder": "Enter your message"
   },
 

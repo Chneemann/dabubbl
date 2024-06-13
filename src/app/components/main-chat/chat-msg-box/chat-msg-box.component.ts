@@ -46,14 +46,15 @@ export class ChatMsgBoxComponent {
   @ViewChild('textarea') textAreaRef!: ElementRef;
 
   hasFile: boolean = false;
+  fileDataError: boolean = false;
   currentFiles!: FileList;
-  files: any;
   getFileIcons = [
     './assets/img/documentIcon.svg',
     './assets/img/imgIcon.svg',
     './assets/img/mp3Icon.svg',
     './assets/img/pdfIcon.svg',
     './assets/img/videoIcon.svg',
+    null,
   ];
   textArea: string = '';
   isEmojiPickerVisible: boolean | undefined;
@@ -102,34 +103,52 @@ export class ChatMsgBoxComponent {
    */
   onFileChange(event: any) {
     if (this.downloadFilesService.uploadFiles.length < 1) {
-      this.currentFiles = event.target.files;
-      this.hasFile = this.currentFiles!.length > 0;
-      if (this.currentFiles) {
-        for (let i = 0; i < this.currentFiles.length; i++) {
-          const fileInfo = this.currentFiles[i];
-          this.downloadFilesService.uploadFiles.push(fileInfo);
+      const file = event.target.files[0];
+      const icon = this.checkIcon({ type: file.type });
+      if (icon !== null) {
+        this.currentFiles = event.target.files;
+        this.hasFile = this.currentFiles.length > 0;
+        if (this.currentFiles) {
+          for (let i = 0; i < this.currentFiles.length; i++) {
+            const fileInfo = this.currentFiles[i];
+            this.downloadFilesService.uploadFiles.push(fileInfo);
+          }
         }
+      } else {
+        this.fileDataError = true;
       }
     }
   }
 
   /**
    * Checks the file type and returns the corresponding icon.
+   * Img (1): PNG, GIF, JPG, JPEG
+   * Files (3): PDF
+   * Files (0): DOC, DOCX
+   * Audio (2): MP3, WAV
+   * Video (4): MP4, WMV, AVI
    * @param fileInfo The file object.
    * @returns The file icon path.
    */
-  checkIcon(fileInfo: any) {
-    if (fileInfo.type == 'audio/mpeg') {
-      return this.getFileIcons[2];
-    } else if (fileInfo.type == 'image/jpeg') {
-      return this.getFileIcons[1];
-    } else if (fileInfo.type == 'application/pdf') {
-      return this.getFileIcons[3];
-    } else if (fileInfo.type == 'video/mp4') {
-      return this.getFileIcons[4];
-    } else {
-      return this.getFileIcons[0];
-    }
+  checkIcon(fileInfo: { type: string }) {
+    const fileTypeMap: Record<string, number> = {
+      'audio/mpeg': 2,
+      'audio/wav': 2,
+      'image/jpg': 1,
+      'image/jpeg': 1,
+      'image/png': 1,
+      'image/gif': 1,
+      'application/pdf': 3,
+      'application/msword': 0,
+      'application/doc': 0,
+      'application/ms-doc': 0,
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document': 0,
+      'video/mp4': 4,
+      'video/x-ms-wmv': 4,
+      'video/avi': 4,
+    };
+
+    return this.getFileIcons[fileTypeMap[fileInfo.type] ?? 5];
   }
 
   /**

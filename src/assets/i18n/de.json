@@ -73,7 +73,8 @@
   },
 
   "channel-msg-box": {
-    "text": "Die maximale Anzahl an Dateien beträgt 1.",
+    "text0": "Maximal eine Datei pro Nachricht",
+    "text1": "Dieses Dateiformat ist ungültig",
     "placeholder": "Geben Sie Ihre Nachricht ein"
   },
 
