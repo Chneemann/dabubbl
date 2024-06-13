@@ -106,6 +106,7 @@ export class ChatMsgBoxComponent {
       const file = event.target.files[0];
       const icon = this.checkIcon({ type: file.type });
       if (icon !== null) {
+        this.fileDataError = false;
         this.currentFiles = event.target.files;
         this.hasFile = this.currentFiles.length > 0;
         if (this.currentFiles) {
