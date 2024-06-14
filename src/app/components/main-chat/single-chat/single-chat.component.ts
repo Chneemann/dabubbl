@@ -15,7 +15,7 @@ import { PickerComponent } from '@ctrl/ngx-emoji-mart';
 import { EditMsgComponent } from './edit-msg/edit-msg.component';
 import { ReactionEmojisComponent } from './reaction-emojis/reaction-emojis.component';
 import { UserService } from '../../../service/user.service';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-single-chat',
@@ -60,7 +60,8 @@ export class SingleChatComponent {
     public chatService: ChatService,
     public channelService: ChatService,
     public userService: UserService,
-    public downloadFilesService: DownloadFilesService
+    public downloadFilesService: DownloadFilesService,
+    private translateService: TranslateService
   ) {}
 
   /**
@@ -143,29 +144,19 @@ export class SingleChatComponent {
    * @param {number} timestamp - The timestamp to convert.
    * @returns {string} The formatted date string.
    */
-  convertTimestampDate(timestamp: number) {
+  convertTimestampDate(timestamp: number): string {
     const currentDate = new Date();
     const inputDate = new Date(timestamp * 1000);
-    const months = [
-      'Jan.',
-      'Feb.',
-      'Mar.',
-      'Apr.',
-      'May.',
-      'Jun.',
-      'Jul.',
-      'Aug.',
-      'Sep.',
-      'Oct.',
-      'Nov.',
-      'Dec.',
-    ];
 
     const dayNumber = inputDate.getDate();
-    const month = months[inputDate.getMonth()];
+    const month = this.translateService.instant(
+      `months.${inputDate
+        .toLocaleDateString('en-US', { month: 'short' })
+        .toLowerCase()}`
+    );
 
     if (inputDate.toDateString() === currentDate.toDateString()) {
-      return `Today`;
+      return this.translateService.instant('months.today');
     } else {
       return `${dayNumber} ${month}`;
     }
