@@ -7,7 +7,7 @@
       right: isSecondaryChatOpen ? '620px' : ''
     }"
   >
-    <div class="posiotionHeader">
+    <div class="positionHeader">
       <p>{{ "show-channel-member.header" | translate }}</p>
       <app-small-btn
         [imgSrc]="'closeIcon.svg'"
@@ -21,7 +21,7 @@
     <div class="positionOfAllUsersInBox">
       @for(user of getFiltertUsers; track user){
       <div class="user" (click)="openUserWindow(user)">
-        <div class="positionImgs">
+        <div class="positionImg">
           <img src="{{ user.avatar }}" class="avatarImg" />
           <img
             src="./assets/img/{{
@@ -46,7 +46,7 @@
       right: isSecondaryChatOpen ? '580px' : ''
     }"
   >
-    <div class="posiotionHeader">
+    <div class="positionHeader">
       <div class="headline">
         <p>{{ "show-channel-member.addMember" | translate }}</p>
         @if (getChannelName(currentChannel)) {
@@ -85,7 +85,7 @@
           @for(user of getSearchedUser; track user){
           @if(!isUserAlreadySelected(user)) {
           <div class="userBox" (click)="chooseUser(user)">
-            <div class="positionImgsBox">
+            <div class="positionImgBox">
               <img src="{{ user.avatar }}" class="addAvatarImg" />
               <img
                 src="./assets/img/{{
@@ -104,7 +104,7 @@
         id="userName"
         name="userName"
         autocomplete="off"
-        class="inputfieldStyle"
+        class="inputFieldStyle"
         [(ngModel)]="userName"
         (keyup)="filterUsers(userName)"
       />
@@ -113,7 +113,7 @@
       <button
         class="furterBtnClass"
         [ngClass]="{
-          furterBtnClass: getSelectedUsers.length > 0,
+          btnClass: getSelectedUsers.length > 0,
           disabledBtn: getSelectedUsers.length === 0
         }"
         [disabled]="getSelectedUsers.length === 0"
