@@ -27,7 +27,7 @@
       <!----- Render users ----->
       @for (i of userService.allUsers; track $index) {
       <div class="user" (click)="chooseElement(i)">
-        <div class="positionImgs">
+        <div class="positionImg">
           <img src="{{ i.avatar }}" class="avatarImg" />
           <img
             src="./assets/img/{{

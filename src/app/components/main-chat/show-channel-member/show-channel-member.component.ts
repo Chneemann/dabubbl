@@ -31,7 +31,6 @@ export class ShowChannelMemberComponent {
   getCurrentChannelName: string = '';
   getSelectedUsers: User[] = [];
   selectedUsers: string[] = [];
-
   openUserWindowBoolean: boolean = false;
   user: User[] = [];
 

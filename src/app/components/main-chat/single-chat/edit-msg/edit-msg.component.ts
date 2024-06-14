@@ -28,7 +28,7 @@ import { SharedService } from '../../../../service/shared.service';
   styleUrl: './edit-msg.component.scss',
 })
 export class EditMsgComponent {
-  @Input() chat!: Chat | ChatAnswers;
+  @Input() chat: Chat | ChatAnswers = {} as Chat | ChatAnswers;
   @Input() viewWidth: number = 0;
   @Input() openOnSecondaryChat: boolean = false;
   @Output() closeEditMsgEmitter: EventEmitter<boolean> =

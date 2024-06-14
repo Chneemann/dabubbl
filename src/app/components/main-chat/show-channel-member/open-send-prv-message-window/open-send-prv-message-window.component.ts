@@ -15,10 +15,10 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './open-send-prv-message-window.component.scss',
 })
 export class OpenSendPrvMessageWindowComponent {
-  @Input() user!: User[];
-  @Input() talkToUser!: User[];
-  @Input() openUserWindowBoolean!: boolean;
-  @Input() showProfil!: boolean;
+  @Input() user: User[] = [];
+  @Input() talkToUser: User[] = [];
+  @Input() openUserWindowBoolean: boolean = false;
+  @Input() showProfil: boolean = false;
   @Output() closeUserWindow = new EventEmitter<boolean>();
   @Output() showProfilWindow = new EventEmitter<boolean>();
   isOnline: boolean = false;

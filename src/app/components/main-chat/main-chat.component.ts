@@ -55,7 +55,7 @@ export class MainChatComponent {
   channelCreator: boolean = false;
   openMenu: boolean = false;
   showProfil: boolean = false;
-  talkToUser!: User[];
+  talkToUser: User[] = {} as User[];
 
   constructor(
     private route: Router,

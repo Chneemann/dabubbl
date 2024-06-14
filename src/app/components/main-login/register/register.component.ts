@@ -27,7 +27,7 @@ import { TranslateModule } from '@ngx-translate/core';
 export class RegisterComponent {
   firestore: Firestore = inject(Firestore);
   isChecked: boolean = false;
-  currentImage: string;
+  currentImage: string = '';
   defaultImage = './assets/img/login/box.png';
   clickedImage = './assets/img/login/box-checked.png';
   hoverImage = './assets/img/login/box-hover.png';

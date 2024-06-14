@@ -27,8 +27,9 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class PasswordForgetComponent {
   email: string = '';
-  emailSentBtn = false;
+  emailSentBtn: boolean = false;
   firestore: Firestore = inject(Firestore);
+
   constructor(private router: Router) {}
 
   /**

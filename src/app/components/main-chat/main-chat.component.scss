@@ -181,7 +181,7 @@ section {
       background-color: #edeefe;
       border-radius: 25px;
     }
-    .positionImgs {
+    .positionImg {
       @include displayFlex($a: flex-end);
       .avatarImg {
         width: 40px;
