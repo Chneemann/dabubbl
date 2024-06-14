@@ -29,10 +29,17 @@
         }
       </div>
       <div class="spacer">
+        @if (displayCountChatAnswer(chat.id) == 1) {
         <p>
           {{ displayCountChatAnswer(chat.id) }}
-          {{ "secondary-chat.answer" | translate }}
+          {{ "single-chat.answer2" | translate }}
         </p>
+        } @else {
+        <p>
+          {{ displayCountChatAnswer(chat.id) }}
+          {{ "single-chat.answer" | translate }}
+        </p>
+        }
         <div class="line"></div>
       </div>
       }

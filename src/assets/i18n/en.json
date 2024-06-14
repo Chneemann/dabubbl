@@ -131,8 +131,7 @@
   },
 
   "secondary-chat": {
-    "thread": "Thread",
-    "answer": "Reply"
+    "thread": "Thread"
   },
 
   "add-new-channel": {
