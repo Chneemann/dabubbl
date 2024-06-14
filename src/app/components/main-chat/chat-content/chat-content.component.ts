@@ -14,6 +14,7 @@ import { ChatMsgBoxComponent } from '../chat-msg-box/chat-msg-box.component';
 import { CommonModule } from '@angular/common';
 import { ChannelService } from '../../../service/channel.service';
 import { InfoComponent } from '../info/info.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-chat-content',
@@ -44,6 +45,7 @@ export class ChatContentComponent implements AfterViewInit {
     private chatService: ChatService,
     private userService: UserService,
     public channelService: ChannelService,
+    private translateService: TranslateService,
     private renderer: Renderer2
   ) {}
 
@@ -118,40 +120,24 @@ export class ChatContentComponent implements AfterViewInit {
    * @param {number} timestamp - The timestamp to convert.
    * @returns {string} The formatted date string.
    */
-  convertTimestampDate(timestamp: number) {
+  convertTimestampDate(timestamp: number): string {
     const currentDate = new Date();
     const inputDate = new Date(timestamp * 1000);
-
-    const days = [
-      'Sunday',
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
-    ];
-    const months = [
-      'Jan.',
-      'Feb.',
-      'Mar.',
-      'Apr.',
-      'May.',
-      'Jun.',
-      'Jul.',
-      'Aug.',
-      'Sep.',
-      'Oct.',
-      'Nov.',
-      'Dec.',
-    ];
-
     const dayNumber = inputDate.getDate();
-    const day = days[inputDate.getDay()];
-    const month = months[inputDate.getMonth()];
+
+    const day = this.translateService.instant(
+      `weekdays.${inputDate
+        .toLocaleDateString('en-US', { weekday: 'long' })
+        .toLowerCase()}`
+    );
+    const month = this.translateService.instant(
+      `months.${inputDate
+        .toLocaleDateString('en-US', { month: 'short' })
+        .toLowerCase()}`
+    );
 
     if (inputDate.toDateString() === currentDate.toDateString()) {
-      return `Today`;
+      return this.translateService.instant('weekdays.today');
     } else {
       return `${day}, ${dayNumber} ${month}`;
     }

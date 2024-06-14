@@ -217,6 +217,32 @@
     "message": "Direct Messages"
   },
 
+  "weekdays": {
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "today": "Today"
+  },
+
+  "months": {
+    "jan": "Jan.",
+    "feb": "Feb.",
+    "mar": "Mar.",
+    "apr": "Apr.",
+    "may": "May",
+    "jun": "Jun.",
+    "jul": "Jul.",
+    "aug": "Aug.",
+    "sep": "Sep.",
+    "oct": "Oct.",
+    "nov": "Nov.",
+    "dec": "Dec."
+  },
+
   "imprint": {
     "headline": "Imprint",
     "tmg": "Information according to §5 TMG",
