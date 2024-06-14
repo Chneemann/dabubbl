@@ -112,12 +112,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: animationToEndPosiotion 0.5s ease-in forwards 1s;
+  animation: animationToEndPosition 0.5s ease-in forwards 1s;
   background-size: contain;
   z-index: 999;
 }
 
-.imgEndPosiotion {
+.imgEndPosition {
   animation: imgSize 0.5s ease-in forwards 1s;
 }
 
@@ -136,7 +136,7 @@
   }
 }
 
-@keyframes animationToEndPosiotion {
+@keyframes animationToEndPosition {
   0% {
     top: 50%;
     left: 50%;
@@ -237,10 +237,10 @@
   }
   .logoEndPosition {
     animation: none;
-    animation: animationToEndPosiotionMobile 0.5s ease-in forwards 1s;
+    animation: animationToEndPositionMobile 0.5s ease-in forwards 1s;
   }
 
-  @keyframes animationToEndPosiotionMobile {
+  @keyframes animationToEndPositionMobile {
     0% {
       top: 50%;
       left: 50%;
@@ -276,7 +276,7 @@
     }
   }
 
-  .imgEndPosiotion {
+  .imgEndPosition {
     animation: none;
     animation: imgSizeMobile 0.5s ease-in forwards 1s;
   }

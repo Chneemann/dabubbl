@@ -1,5 +1,5 @@
 <div class="grayBackground" (click)="closeEditUserWindow()"></div>
-@for(i of userService.getCurentUsers(); track i){
+@for(i of userService.getCurrentUsers(); track i){
 <div class="whiteBox">
   <form
     (ngSubmit)="saveNewUserData(contactForm)"

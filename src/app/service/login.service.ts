@@ -255,7 +255,7 @@ export class loginService {
    * Retrieves the completion status of the introduction class.
    * @returns {boolean} True if the introduction is complete, false otherwise.
    */
-  getFinalclass(): boolean {
+  getFinalClass(): boolean {
     return this.introCompleteStatus;
   }
 
@@ -326,7 +326,7 @@ export class loginService {
     this.getUserIdInLocalStorage(this.currentUser);
   }
 
-  // -------------------- UserAddFunktions ------------------------------->
+  // -------------------- UserAddFunctions ------------------------------->
 
   /**
    * Updates the online status of the user in Firestore.

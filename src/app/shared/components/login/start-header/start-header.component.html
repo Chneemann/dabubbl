@@ -7,15 +7,13 @@
   <div class="header">
     <div
       [class.logo]="animationStart && !this.animationsBlock"
-      [class.logoEndPosition]="animationToEndPosiotion && !this.animationsBlock"
-      [class.final-div-position]="loginService.getFinalclass()"
+      [class.logoEndPosition]="animationToEndPosition && !this.animationsBlock"
+      [class.final-div-position]="loginService.getFinalClass()"
     >
       <img
         class="mobileImg"
-        [class.final-img-position]="loginService.getFinalclass()"
-        [class.imgEndPosiotion]="
-          animationToEndPosiotion && !this.animationsBlock
-        "
+        [class.final-img-position]="loginService.getFinalClass()"
+        [class.imgEndPosition]="animationToEndPosition && !this.animationsBlock"
         src="./assets/img/login/logo-animation.svg"
       />
       <div
@@ -25,7 +23,7 @@
       >
         <span
           [class.logo-text-span]="animationStart && !this.animationsBlock"
-          [class.final-span-position]="loginService.getFinalclass()"
+          [class.final-span-position]="loginService.getFinalClass()"
           >DABubble</span
         >
       </div>

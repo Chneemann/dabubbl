@@ -24,7 +24,7 @@ export class AddNewChannelComponent {
   currentDate: string = new Date().toISOString().split('T')[0];
   changeImg: boolean = false;
   userName: string = '';
-  showExistenUsers: boolean = false;
+  showExistedUsers: boolean = false;
   getSearchedUser: User[] = [];
   channelName: string = '';
   channelDescription: string = '';
@@ -90,7 +90,7 @@ export class AddNewChannelComponent {
    * @param userName The name of the user to filter.
    */
   filterUsers(userName: string) {
-    this.showExistenUsers = true;
+    this.showExistedUsers = true;
     this.getSearchedUser = [];
     const searchedUser = userName.toLowerCase().trim();
     const filteredUsers = this.userService.getUsers().filter((user) => {
@@ -120,7 +120,7 @@ export class AddNewChannelComponent {
       console.log('User already selected!');
     }
     this.userName = '';
-    this.showExistenUsers = false;
+    this.showExistedUsers = false;
   }
 
   /**
@@ -129,14 +129,14 @@ export class AddNewChannelComponent {
    */
   spliceCurrentUser(index: number) {
     this.getSelectedUsers.splice(index, 1);
-    this.showExistenUsers = false;
+    this.showExistedUsers = false;
   }
 
   /**
    * Toggles the added user box.
    */
   toggleAddedUserBox() {
-    this.showExistenUsers = false;
+    this.showExistedUsers = false;
   }
 
   /**
@@ -144,8 +144,8 @@ export class AddNewChannelComponent {
    * @param channelName The name of the channel to check.
    */
   checkIfChannelNameIsValid(channelName: string) {
-    const channelNameLenght = channelName.length;
-    if (channelNameLenght >= 6 && !this.chechIfChannelExist(channelName)) {
+    const channelNameLength = channelName.length;
+    if (channelNameLength >= 6 && !this.checkIfChannelExist(channelName)) {
       this.channelService.btnIsValid = true;
     } else {
       this.channelService.btnIsValid = false;
@@ -153,11 +153,11 @@ export class AddNewChannelComponent {
   }
 
   /**
-   * Check if channel is allready existing.
+   * Check if channel is already existing.
    * @param channelName
    * @returns
    */
-  chechIfChannelExist(channelName: string) {
+  checkIfChannelExist(channelName: string) {
     const filterChannel = this.channelService.allChannels.some(
       (channel) => channel.name === channelName
     );

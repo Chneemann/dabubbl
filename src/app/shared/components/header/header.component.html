@@ -18,7 +18,7 @@
   }
   <div>
     <div class="rightSide">
-      @for(i of userService.getCurentUsers(); track i){
+      @for(i of userService.getCurrentUsers(); track i){
       <p>{{ i.firstName }} {{ i.lastName }}</p>
 
       <div class="img" (click)="showSideMenu()">

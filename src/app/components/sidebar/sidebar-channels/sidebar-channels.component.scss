@@ -128,7 +128,7 @@ section {
   }
 }
 
-.showAllChanneld {
+.showAllChannels {
   animation-name: slideIn;
   overflow: auto;
   transition: max-height 0.3s ease-in-out;
@@ -162,7 +162,7 @@ section {
 }
 
 @media screen and (max-width: $RESPONSIVE_THRESHOLD_MOBILE380px) {
-  .showAllChanneld {
+  .showAllChannels {
     max-height: 16vh;
   }
 }

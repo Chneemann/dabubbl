@@ -74,7 +74,7 @@ export class UserService implements OnDestroy {
    * Get current user's data.
    * @returns Array containing current user's data.
    */
-  getCurentUsers() {
+  getCurrentUsers() {
     const filteredUser = this.getUsers().filter(
       (user) => user.id == this.getCurrentUserId()
     );

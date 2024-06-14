@@ -35,7 +35,7 @@ header {
 
 .leftSide {
   @include displayFlex($j: start, $g: 20px);
-  width: 20vw;
+  width: 30vw;
   .homeIcon {
     width: 242px;
     height: 70px;
@@ -48,7 +48,7 @@ header {
 }
 
 .rightSide {
-  width: 20vw;
+  width: 30vw;
   @include displayFlex($j: end, $g: 20px);
   p {
     font-size: 28px;

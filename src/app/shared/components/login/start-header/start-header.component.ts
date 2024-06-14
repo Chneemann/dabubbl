@@ -23,11 +23,12 @@ import { SharedService } from '../../../../service/shared.service';
 export class StartHeaderComponent {
   @Input() introCompleteStatus: boolean = false;
   @Input() display: string = '';
+
   animationStart: boolean = false;
   animationLogo: boolean = false;
   d_none: boolean = false;
   animationBackground: boolean = false;
-  animationToEndPosiotion: boolean = false;
+  animationToEndPosition: boolean = false;
   animationsBlock: boolean = false;
   viewWidth: number = 0;
 
@@ -60,7 +61,7 @@ export class StartHeaderComponent {
           setTimeout(() => {
             this.animationBackground = true;
           }, 1000);
-          this.animationToEndPosiotion = true;
+          this.animationToEndPosition = true;
           this.loginService.setAnimationState(true);
           setTimeout(() => {
             this.d_none = true;

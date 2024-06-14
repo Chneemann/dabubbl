@@ -57,7 +57,7 @@
     .answersBoxChats {
       width: 100%;
       @include displayFlex($j: space-between, $a: flex-start);
-      .threadNmae {
+      .threadName {
         width: 30%;
       }
       .threadContentBox {
@@ -116,13 +116,13 @@
 }
 
 .showSearchWindow {
-  animation: shwoSW 0.3s ease-in-out;
+  animation: showSW 0.3s ease-in-out;
   width: calc(40vw - 42px);
   max-height: 40vh;
   padding: 20px;
 }
 
-@keyframes shwoSW {
+@keyframes showSW {
   from {
     max-height: 0;
   }

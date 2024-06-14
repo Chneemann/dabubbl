@@ -25,7 +25,7 @@
       <p>{{ "add-new-channel.header2" | translate }}</p>
       &nbsp;
       <span>{{ "add-new-channel.required" | translate }}</span>
-      @if (chechIfChannelExist(channelName)) {
+      @if (checkIfChannelExist(channelName)) {
       <p class="warning">{{ "add-new-channel.warning" | translate }}</p>
       }
       <img class="hashtag" src="./assets/img/hashtag.svg" alt="" />
@@ -118,18 +118,18 @@
       </div>
       <input
         type="text"
-        class="inputfieldStyle"
+        class="inputFieldStyle"
         [(ngModel)]="userName"
         (keyup)="filterUsers(userName)"
       />
       <div
         class="showSearchedUsersWindow"
-        [ngClass]="{ dBlock: showExistenUsers, dNone: !showExistenUsers }"
+        [ngClass]="{ dBlock: showExistedUsers, dNone: !showExistedUsers }"
       >
         <div class="positionOfAllUsersInBox">
           @for(user of getSearchedUser; track user){
           <div class="user" (click)="chooseUser(user)">
-            <div class="positionImgs">
+            <div class="positionImg">
               <img src="{{ user.avatar }}" class="avatarImg" />
               <img
                 src="./assets/img/{{

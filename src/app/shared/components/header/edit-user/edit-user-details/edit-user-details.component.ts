@@ -28,8 +28,8 @@ import { SmallBtnComponent } from '../../../small-btn/small-btn.component';
   styleUrl: './edit-user-details.component.scss',
 })
 export class EditUserDetailsComponent {
-  @Input() openEditUserValue!: boolean;
-  @Input() showCurrentProfile!: boolean;
+  @Input() openEditUserValue: boolean = false;
+  @Input() showCurrentProfile: boolean = false;
   @Output() closeEditWindow = new EventEmitter<boolean>();
   @Output() saveUserData = new EventEmitter<boolean>();
   @ViewChild('inputName') inputName!: ElementRef;
@@ -98,20 +98,13 @@ export class EditUserDetailsComponent {
 
   /**Separate the first ans lastname. */
   splitNameValue() {
-    const fullname: string[] = this.changedName.split(' ');
-    const newFirstName: string = fullname[0];
-    let newLastName: string = fullname[1];
-    if (fullname[2]) {
-      newLastName += ' ' + fullname[2];
+    const fullName: string[] = this.changedName.split(' ');
+    const newFirstName: string = fullName[0];
+    let newLastName: string = fullName[1];
+    if (fullName[2]) {
+      newLastName += ' ' + fullName[2];
     }
     return [newFirstName, newLastName];
-  }
-
-  /** Get the email value. */
-  chechEmailValue() {
-    if (this.changedEmail == '') {
-      this.changedEmail = this.userService.emailValue;
-    }
   }
 
   /**
@@ -122,15 +115,15 @@ export class EditUserDetailsComponent {
     if (nameValue.trim() === '') {
       this.nameValueBoolean = false;
     } else {
-      const channelNameLenght = nameValue.length;
-      if (channelNameLenght >= 3) {
+      const channelNameLength = nameValue.length;
+      if (channelNameLength >= 3) {
         this.nameValueBoolean = true;
         this.changedName = nameValue;
       } else {
         this.nameValueBoolean = false;
       }
     }
-    this.chackSaveBtnName();
+    this.checkSaveBtnName();
   }
 
   /**
@@ -155,7 +148,7 @@ export class EditUserDetailsComponent {
   /**
    * Checks if the save button is valid.
    */
-  chackSaveBtnName() {
+  checkSaveBtnName() {
     if (this.nameValueBoolean) {
       this.channelService.saveEditBtnIsValid = true;
     } else {
