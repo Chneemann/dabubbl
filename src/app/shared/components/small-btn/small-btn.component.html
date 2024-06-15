@@ -1,4 +1,4 @@
-<div
+<button
   class="smallBtn"
   [ngStyle]="{
     width: btnSize,
@@ -6,6 +6,7 @@
     'background-color': btnBgColor,
     '--btnBgHoverColor': btnBgHoverColor
   }"
+  [disabled]="disable"
 >
   <img
     [ngStyle]="{
@@ -13,7 +14,7 @@
       height: imgSize,
       '--filter': imgFilter
     }"
-    src="./assets/img/{{ imgSrc }}"
+    [src]="'assets/img/' + imgSrc"
     alt=""
   />
-</div>
+</button>

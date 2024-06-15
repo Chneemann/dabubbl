@@ -16,4 +16,5 @@ export class SmallBtnComponent {
   @Input() btnSize: string = '28px';
   @Input() btnBgColor: string = '';
   @Input() btnBgHoverColor: string = '#edeefe';
+  @Input() disable: boolean = false;
 }

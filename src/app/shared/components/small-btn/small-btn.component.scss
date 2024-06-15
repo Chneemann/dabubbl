@@ -2,16 +2,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 0px;
   border-radius: 100%;
+  background-color: transparent;
   width: 0;
   height: 0;
   cursor: pointer;
   transition: 0.125s ease-in-out;
+  img {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(5%) saturate(7481%)
+      hue-rotate(228deg) brightness(98%) contrast(106%);
+  }
   &:hover {
     background-color: var(--btnBgHoverColor);
     img {
       scale: 1.1;
       filter: var(--filter);
+    }
+  }
+}
+
+.smallBtn[disabled] {
+  cursor: auto;
+  img {
+    filter: brightness(0) saturate(100%) invert(40%) sepia(0%) saturate(29%)
+      hue-rotate(173deg) brightness(99%) contrast(91%);
+  }
+  &:hover {
+    background-color: transparent;
+    img {
+      scale: 1;
     }
   }
 }

@@ -44,6 +44,7 @@ export class ChatMsgBoxComponent {
   @Input() viewWidth: number = 0;
   @Output() newMsgEmitter: EventEmitter<boolean> = new EventEmitter<boolean>();
   @ViewChild('textarea') textAreaRef!: ElementRef;
+  @ViewChild('fileInput') fileInput!: ElementRef;
 
   hasFile: boolean = false;
   fileDataError: boolean = false;
@@ -95,6 +96,12 @@ export class ChatMsgBoxComponent {
       this.viewWidth >= this.RESPONSIVE_THRESHOLD_MOBILE
     ) {
       this.textAreaRef.nativeElement.select();
+    }
+  }
+
+  handleFileInputClick() {
+    if (this.downloadFilesService.uploadFiles.length < 1) {
+      this.fileInput.nativeElement.click();
     }
   }
 

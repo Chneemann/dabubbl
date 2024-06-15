@@ -73,7 +73,6 @@
   },
 
   "channel-msg-box": {
-    "text0": "Maximal eine Datei pro Nachricht",
     "text1": "Dieses Dateiformat ist ungültig",
     "text2": "Dateigröße max. 1 MB",
     "placeholder": "Geben Sie Ihre Nachricht ein"
