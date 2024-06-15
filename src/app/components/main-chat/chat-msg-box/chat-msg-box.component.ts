@@ -47,6 +47,7 @@ export class ChatMsgBoxComponent {
 
   hasFile: boolean = false;
   fileDataError: boolean = false;
+  fileSizeError: boolean = false;
   currentFiles!: FileList;
   getFileIcons = [
     './assets/img/documentIcon.svg',
@@ -104,9 +105,11 @@ export class ChatMsgBoxComponent {
   onFileChange(event: any) {
     if (this.downloadFilesService.uploadFiles.length < 1) {
       const file = event.target.files[0];
-      const icon = this.checkIcon({ type: file.type });
-      if (icon !== null) {
+      const fileIcon = this.checkIcon({ type: file.type });
+      const fileSize = this.checkFileSize(file.size);
+      if (fileIcon !== null && fileIcon && fileSize) {
         this.fileDataError = false;
+        this.fileSizeError = false;
         this.currentFiles = event.target.files;
         this.hasFile = this.currentFiles.length > 0;
         if (this.currentFiles) {
@@ -115,9 +118,20 @@ export class ChatMsgBoxComponent {
             this.downloadFilesService.uploadFiles.push(fileInfo);
           }
         }
+      } else if (fileIcon) {
+        this.fileSizeError = true;
       } else {
         this.fileDataError = true;
       }
+    }
+  }
+
+  checkFileSize(fileSize: number): boolean {
+    const maxSizeInBytes = 1 * 1024 * 1024; // Maximum file size of 1 MB
+    if (fileSize <= maxSizeInBytes) {
+      return true;
+    } else {
+      return false;
     }
   }
 

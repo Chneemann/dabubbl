@@ -63,13 +63,18 @@
         (click)="targetChatUser($event)"
       ></app-small-btn>
       <!-- Warning message -->
-      @if (downloadFilesService.uploadFiles.length >= 1){
+      @if (downloadFilesService.uploadFiles.length >= 1 && !fileDataError &&
+      !fileSizeError){
       <p class="warningMessage">
         {{ "channel-msg-box.text0" | translate }}
       </p>
       } @if(fileDataError){
       <p class="warningMessage">
         {{ "channel-msg-box.text1" | translate }}
+      </p>
+      } @if(fileSizeError){
+      <p class="warningMessage">
+        {{ "channel-msg-box.text2" | translate }}
       </p>
       }
       <div class="filteredElementWindow">

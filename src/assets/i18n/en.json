@@ -75,6 +75,7 @@
   "channel-msg-box": {
     "text0": "Maximum one file per message",
     "text1": "This file format is invalid",
+    "text2": "File size max. 1 MB",
     "placeholder": "Enter your message"
   },
 
