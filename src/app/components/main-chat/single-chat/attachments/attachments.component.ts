@@ -17,7 +17,8 @@ export class AttachmentsComponent {
   @Input() filePath: string = '';
   @Input() openOnSecondaryChat: boolean = false;
   @Input() viewWidth: number = 0;
-  loadingUrl: string = './../../../assets/img/loading.svg';
+
+  imgIsLoading = true;
 
   constructor(
     public downloadFilesService: DownloadFilesService,
@@ -26,6 +27,10 @@ export class AttachmentsComponent {
   ) {}
 
   RESPONSIVE_THRESHOLD = this.sharedService.RESPONSIVE_THRESHOLD;
+
+  onImageLoad() {
+    this.imgIsLoading = false;
+  }
 
   /**
    * Gets the file type from the given file name.

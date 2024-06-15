@@ -6,8 +6,10 @@
   overflow: auto;
   margin-top: 12px;
   .filesView {
+    position: relative;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    overflow: hidden;
     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
     img,
     video {
@@ -22,9 +24,26 @@
       width: auto;
       border-radius: 12px;
     }
+    .loadingImg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: spin 10s linear infinite;
+    }
     &:hover {
       filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.35));
     }
+  }
+}
+
+/*------------- ANIMATION -------------*/
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 

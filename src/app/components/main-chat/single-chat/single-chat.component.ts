@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { User } from '../../../interface/user.interface';
 import { Chat, ChatAnswers } from '../../../interface/chat.interface';
 import { ChatContentComponent } from '../chat-content/chat-content.component';
@@ -53,8 +53,6 @@ export class SingleChatComponent {
   isOptionMenuVisible: boolean = false;
   isMsgEditFormOpen: boolean = false;
   firstLoadOptionMenu: boolean = false;
-
-  filePath: string | undefined = '';
 
   constructor(
     public chatService: ChatService,
@@ -156,7 +154,7 @@ export class SingleChatComponent {
     );
 
     if (inputDate.toDateString() === currentDate.toDateString()) {
-      return this.translateService.instant('months.today');
+      return this.translateService.instant('weekdays.today');
     } else {
       return `${dayNumber} ${month}`;
     }

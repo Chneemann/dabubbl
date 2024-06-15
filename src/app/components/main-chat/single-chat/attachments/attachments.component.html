@@ -3,6 +3,7 @@
     @if (['png', 'jpg', 'jpeg', 'gif'].includes(getFileType(filePath))) {
     <img
       src="{{ filePath }}"
+      (load)="onImageLoad()"
       alt="image"
       [ngStyle]="{
         height:
@@ -17,6 +18,7 @@
       <img
         class="otherFiles"
         src="./assets/img/attachments/{{ getFileType(filePath) }}.png"
+        (load)="onImageLoad()"
         alt="image"
         [ngStyle]="{
           height:
@@ -30,6 +32,7 @@
       controls
       preload="auto"
       src="{{ filePath }}"
+      (load)="onImageLoad()"
       [ngStyle]="{
         width:
           openOnSecondaryChat && viewWidth >= RESPONSIVE_THRESHOLD
@@ -42,6 +45,7 @@
       <video
         src="{{ filePath }}"
         alt="video"
+        (load)="onImageLoad()"
         [ngStyle]="{
           height:
             openOnSecondaryChat && viewWidth >= RESPONSIVE_THRESHOLD
@@ -51,5 +55,17 @@
       ></video>
     </div>
     }
+    <img
+      *ngIf="imgIsLoading"
+      src="./../../../../../assets/img/attachments/loading.svg"
+      alt="loading"
+      class="loadingImg"
+      [ngStyle]="{
+        height:
+          openOnSecondaryChat && viewWidth >= RESPONSIVE_THRESHOLD
+            ? '5vw'
+            : '7.5vw'
+      }"
+    />
   </div>
 </div>
