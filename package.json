@@ -23,6 +23,7 @@
     "@ctrl/ngx-emoji-mart": "^9.2.0",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
+    "@sentry/angular": "^8.30.0",
     "crypto-es": "^2.1.0",
     "ng2-pdf-viewer": "^10.0.0",
     "ngx-extended-pdf-viewer": "^19.6.6",
