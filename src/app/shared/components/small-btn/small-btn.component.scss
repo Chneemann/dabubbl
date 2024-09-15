@@ -10,8 +10,7 @@
   cursor: pointer;
   transition: 0.125s ease-in-out;
   img {
-    filter: brightness(0) saturate(100%) invert(0%) sepia(5%) saturate(7481%)
-      hue-rotate(228deg) brightness(98%) contrast(106%);
+    filter: var(--filterStatic);
   }
   &:hover {
     background-color: var(--btnBgHoverColor);
