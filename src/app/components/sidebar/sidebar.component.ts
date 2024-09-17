@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { SidebarChannelsComponent } from './sidebar-channels/sidebar-channels.component';
 import { SidebarDirectMessagesComponent } from './sidebar-direct-messages/sidebar-direct-messages.component';
-import { SmallBtnComponent } from '../../shared/components/small-btn/small-btn.component';
+import { SmallBtnComponent } from '../../shared/components/buttons/small-btn/small-btn.component';
 import { CommonModule } from '@angular/common';
 import { ChannelService } from '../../service/channel.service';
 import { ToggleBooleanService } from '../../service/toggle-boolean.service';

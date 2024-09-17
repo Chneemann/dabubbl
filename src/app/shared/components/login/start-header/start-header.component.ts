@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { loginService } from '../../../../service/login.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../../../../service/language.service';
-import { SmallBtnComponent } from '../../small-btn/small-btn.component';
+import { SmallBtnComponent } from '../../buttons/small-btn/small-btn.component';
 import { SharedService } from '../../../../service/shared.service';
 
 @Component({

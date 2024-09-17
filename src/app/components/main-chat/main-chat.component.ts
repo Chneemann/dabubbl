@@ -16,7 +16,7 @@ import { SingleChatComponent } from './single-chat/single-chat.component';
 import { ToggleBooleanService } from '../../service/toggle-boolean.service';
 import { ChatMsgBoxComponent } from './chat-msg-box/chat-msg-box.component';
 import { FormsModule } from '@angular/forms';
-import { SmallBtnComponent } from '../../shared/components/small-btn/small-btn.component';
+import { SmallBtnComponent } from '../../shared/components/buttons/small-btn/small-btn.component';
 import { ShowChannelMemberComponent } from './show-channel-member/show-channel-member.component';
 import { SharedService } from '../../service/shared.service';
 import { ChannelInformationComponent } from './channel-information/channel-information.component';

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { SingleChatComponent } from '../single-chat.component';
-import { SmallBtnComponent } from '../../../../shared/components/small-btn/small-btn.component';
+import { SmallBtnComponent } from '../../../../shared/components/buttons/small-btn/small-btn.component';
 import { ChatService } from '../../../../service/chat.service';
 import { EmojiPickerComponent } from '../../../../shared/components/emoji-picker/emoji-picker.component';
 import { UserService } from '../../../../service/user.service';

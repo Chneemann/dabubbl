@@ -4,7 +4,7 @@ import { UserService } from '../../../service/user.service';
 import { User } from '../../../interface/user.interface';
 import { ChannelService } from '../../../service/channel.service';
 import { Router } from '@angular/router';
-import { SmallBtnComponent } from '../../../shared/components/small-btn/small-btn.component';
+import { SmallBtnComponent } from '../../../shared/components/buttons/small-btn/small-btn.component';
 import { ChatService } from '../../../service/chat.service';
 import { SharedService } from '../../../service/shared.service';
 import { ToggleBooleanService } from '../../../service/toggle-boolean.service';

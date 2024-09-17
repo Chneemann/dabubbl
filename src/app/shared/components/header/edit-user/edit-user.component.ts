@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { EditUserDetailsComponent } from './edit-user-details/edit-user-details.component';
 import { UserService } from '../../../../service/user.service';
 import { TranslateModule } from '@ngx-translate/core';
-import { SmallBtnComponent } from '../../small-btn/small-btn.component';
+import { SmallBtnComponent } from '../../buttons/small-btn/small-btn.component';
 
 @Component({
   selector: 'app-edit-user',

@@ -7,7 +7,7 @@ import { UserService } from '../../../service/user.service';
 import { Router } from '@angular/router';
 import { User } from '../../../interface/user.interface';
 import { SharedService } from '../../../service/shared.service';
-import { SmallBtnComponent } from '../../../shared/components/small-btn/small-btn.component';
+import { SmallBtnComponent } from '../../../shared/components/buttons/small-btn/small-btn.component';
 import { OpenSendPrvMessageWindowComponent } from '../show-channel-member/open-send-prv-message-window/open-send-prv-message-window.component';
 import { TranslateModule } from '@ngx-translate/core';
 

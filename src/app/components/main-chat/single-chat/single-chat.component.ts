@@ -9,7 +9,7 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { OptionsMenuComponent } from './options-menu/options-menu.component';
 import { AttachmentsComponent } from './attachments/attachments.component';
 import { ChatMsgBoxComponent } from '../chat-msg-box/chat-msg-box.component';
-import { SmallBtnComponent } from '../../../shared/components/small-btn/small-btn.component';
+import { SmallBtnComponent } from '../../../shared/components/buttons/small-btn/small-btn.component';
 import { FormsModule, NgForm } from '@angular/forms';
 import { PickerComponent } from '@ctrl/ngx-emoji-mart';
 import { EditMsgComponent } from './edit-msg/edit-msg.component';

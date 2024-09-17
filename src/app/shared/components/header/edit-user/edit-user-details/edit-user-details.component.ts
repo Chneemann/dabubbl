@@ -12,7 +12,7 @@ import { UserService } from '../../../../../service/user.service';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ChannelService } from '../../../../../service/channel.service';
 import { TranslateModule } from '@ngx-translate/core';
-import { SmallBtnComponent } from '../../../small-btn/small-btn.component';
+import { SmallBtnComponent } from '../../../buttons/small-btn/small-btn.component';
 
 @Component({
   selector: 'app-edit-user-details',

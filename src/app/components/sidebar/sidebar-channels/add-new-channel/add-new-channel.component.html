@@ -56,16 +56,11 @@
       placeholder="{{ 'add-new-channel.placeholder2' | translate }}"
     ></textarea>
     <div class="btnBox">
-      <button
+      <app-btn-large
         (click)="createNewChannel()"
+        [value]="'add-new-channel.create' | translate"
         [disabled]="!channelService.btnIsValid"
-        [ngClass]="{
-          disabledBtn: !channelService.btnIsValid,
-          enableBtn: channelService.btnIsValid
-        }"
-      >
-        {{ "add-new-channel.create" | translate }}
-      </button>
+      ></app-btn-large>
     </div>
   </div>
   } @if (showNextWindow || showNextWindowMobile) {
@@ -145,9 +140,10 @@
       </div>
     </div>
     <div class="positionCreateBtn">
-      <button class="btnBox" (click)="addNewChannel()">
-        {{ "add-new-channel.create" | translate }}
-      </button>
+      <app-btn-large
+        (click)="addNewChannel()"
+        [value]="'add-new-channel.create' | translate"
+      ></app-btn-large>
     </div>
   </div>
   }

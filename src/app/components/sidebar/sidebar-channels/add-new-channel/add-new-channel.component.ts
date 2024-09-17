@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { ChannelService } from '../../../../service/channel.service';
-import { SmallBtnComponent } from '../../../../shared/components/small-btn/small-btn.component';
+import { SmallBtnComponent } from '../../../../shared/components/buttons/small-btn/small-btn.component';
 import { FormsModule } from '@angular/forms';
 import { UserService } from '../../../../service/user.service';
 import { User } from '../../../../interface/user.interface';
@@ -10,11 +10,18 @@ import { Router } from '@angular/router';
 import { SharedService } from '../../../../service/shared.service';
 import { ToggleBooleanService } from '../../../../service/toggle-boolean.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { BtnLargeComponent } from '../../../../shared/components/buttons/btn-large/btn-large.component';
 
 @Component({
   selector: 'app-add-new-channel',
   standalone: true,
-  imports: [CommonModule, SmallBtnComponent, FormsModule, TranslateModule],
+  imports: [
+    CommonModule,
+    SmallBtnComponent,
+    BtnLargeComponent,
+    FormsModule,
+    TranslateModule,
+  ],
   templateUrl: './add-new-channel.component.html',
   styleUrl: './add-new-channel.component.scss',
 })

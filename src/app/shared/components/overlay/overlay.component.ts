@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { OverlayService } from '../../../service/overlay.service';
 import { CommonModule } from '@angular/common';
-import { SmallBtnComponent } from '../small-btn/small-btn.component';
+import { SmallBtnComponent } from '../buttons/small-btn/small-btn.component';
 
 @Component({
   selector: 'app-overlay',

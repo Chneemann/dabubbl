@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FooterComponent } from '../../../shared/components/login/footer/footer.component';
 import { RouterModule } from '@angular/router';
-import { SmallBtnComponent } from '../../../shared/components/small-btn/small-btn.component';
+import { SmallBtnComponent } from '../../../shared/components/buttons/small-btn/small-btn.component';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { Firestore } from '@angular/fire/firestore';
 import { CommonModule } from '@angular/common';

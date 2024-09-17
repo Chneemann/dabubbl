@@ -13,7 +13,7 @@ import { Firestore, addDoc, collection } from '@angular/fire/firestore';
 import { DownloadFilesService } from '../../../service/files.service';
 import { UserService } from '../../../service/user.service';
 import { EmojiPickerComponent } from '../../../shared/components/emoji-picker/emoji-picker.component';
-import { SmallBtnComponent } from '../../../shared/components/small-btn/small-btn.component';
+import { SmallBtnComponent } from '../../../shared/components/buttons/small-btn/small-btn.component';
 import { ChatService } from '../../../service/chat.service';
 import { Router } from '@angular/router';
 import { ChannelService } from '../../../service/channel.service';

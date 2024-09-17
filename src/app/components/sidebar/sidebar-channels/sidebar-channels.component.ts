@@ -3,7 +3,7 @@ import { ChannelService } from '../../../service/channel.service';
 import { Channel, publicChannels } from '../../../interface/channel.interface';
 import { RouterLink } from '@angular/router';
 import { ChatService } from '../../../service/chat.service';
-import { SmallBtnComponent } from '../../../shared/components/small-btn/small-btn.component';
+import { SmallBtnComponent } from '../../../shared/components/buttons/small-btn/small-btn.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AddNewChannelComponent } from './add-new-channel/add-new-channel.component';

@@ -6,7 +6,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ToggleBooleanService } from '../../../service/toggle-boolean.service';
 import { ChatService } from '../../../service/chat.service';
 import { SharedService } from '../../../service/shared.service';
-import { SmallBtnComponent } from '../small-btn/small-btn.component';
+import { SmallBtnComponent } from '../buttons/small-btn/small-btn.component';
 import { LanguageService } from '../../../service/language.service';
 import { TranslateModule } from '@ngx-translate/core';
 

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SmallBtnComponent } from '../../../../shared/components/small-btn/small-btn.component';
+import { SmallBtnComponent } from '../../../../shared/components/buttons/small-btn/small-btn.component';
 import { CommonModule } from '@angular/common';
 import {
   Chat,

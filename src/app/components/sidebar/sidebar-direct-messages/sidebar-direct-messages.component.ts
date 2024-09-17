@@ -2,7 +2,7 @@ import { Component, HostListener, Input } from '@angular/core';
 import { SidebarDirectMessagesUserComponent } from '../sidebar-direct-messages-user/sidebar-direct-messages-user.component';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-import { SmallBtnComponent } from '../../../shared/components/small-btn/small-btn.component';
+import { SmallBtnComponent } from '../../../shared/components/buttons/small-btn/small-btn.component';
 import { ShowAllUsersComponent } from '../show-all-users/show-all-users.component';
 
 @Component({

@@ -3,7 +3,7 @@ import { FooterComponent } from '../../../shared/components/login/footer/footer.
 import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { SmallBtnComponent } from '../../../shared/components/small-btn/small-btn.component';
+import { SmallBtnComponent } from '../../../shared/components/buttons/small-btn/small-btn.component';
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
 import { Firestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';

@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ChatService } from '../../../../service/chat.service';
 import { PickerComponent } from '@ctrl/ngx-emoji-mart';
-import { SmallBtnComponent } from '../../../../shared/components/small-btn/small-btn.component';
+import { SmallBtnComponent } from '../../../../shared/components/buttons/small-btn/small-btn.component';
 import { DownloadFilesService } from '../../../../service/files.service';
 import { EmojiPickerComponent } from '../../../../shared/components/emoji-picker/emoji-picker.component';
 import { UserService } from '../../../../service/user.service';
