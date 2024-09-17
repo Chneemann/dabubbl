@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Channel } from '../../../interface/channel.interface';
+import { Channel, publicChannels } from '../../../interface/channel.interface';
 import { ChannelService } from '../../../service/channel.service';
 import { UserService } from '../../../service/user.service';
 import { Router } from '@angular/router';
@@ -37,6 +37,7 @@ export class ChannelInformationComponent {
   getCurrentChannel: Channel[] = [];
   openUserWindowBoolean: boolean = false;
   user: User[] = [];
+  publicChannelsList: string[] = [];
 
   constructor(
     private route: Router,
@@ -46,6 +47,10 @@ export class ChannelInformationComponent {
   ) {}
 
   RESPONSIVE_THRESHOLD_MOBILE = this.sharedService.RESPONSIVE_THRESHOLD_MOBILE;
+
+  ngOnInit(): void {
+    this.publicChannelsList = publicChannels;
+  }
 
   /**
    * Closes the menu by emitting a signal to close editing.
