@@ -12,7 +12,8 @@
       ></app-small-btn>
     </div>
     <div class="positionOfAllUsersInBox">
-      @for(user of userService.getUsers(); track user){
+      @for(user of userService.getUsers(); track user){ @if
+      (this.userService.getCurrentUserId() !== user.id) {
       <div
         class="user"
         (click)="checkRoute([user]); closeSecondaryChatAndSidebar()"
@@ -26,9 +27,9 @@
             class="onlineIcon"
           />
         </div>
-        <h1>{{ user.firstName }} {{ user.lastName }}</h1>
+        <p>{{ user.firstName }} {{ user.lastName }}</p>
       </div>
-      }
+      } }
     </div>
   </div>
 </section>

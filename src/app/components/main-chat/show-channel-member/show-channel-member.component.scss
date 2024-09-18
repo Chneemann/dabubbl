@@ -14,7 +14,9 @@
   position: absolute;
   top: 199px;
   right: 108px;
-  width: 320px;
+  width: fit-content;
+  max-width: 320px;
+  min-width: 250px;
   height: fit-content;
   z-index: 4;
   border-radius: 35px;
@@ -23,7 +25,6 @@
   padding: 24px;
   @include displayFlex($g: 20px);
   flex-direction: column;
-
   .positionHeader {
     @include displayFlex($j: space-between);
     font-size: 24px;
@@ -39,28 +40,27 @@
   max-height: 300px;
   overflow: auto;
   width: 100%;
-
+  p {
+    font-size: 19px;
+    font-weight: 500;
+  }
   .user {
     @include displayFlex($g: 12px);
     padding: 6px;
     cursor: pointer;
     transition: 0.2s ease-in-out;
-
     &:hover {
       background-color: #edeefe;
       border-radius: 25px;
     }
-
     .positionImg {
       @include displayFlex($a: flex-end);
-
       .avatarImg {
         width: 40px;
         height: 40px;
         object-fit: cover;
         border-radius: 50%;
       }
-
       .onlineIcon {
         width: 12px;
         height: 12px;
@@ -75,7 +75,6 @@
   transition: background-color 0.2s ease-in-out;
   border-radius: 20px;
   padding: 8px;
-
   &:hover {
     background-color: #888dec;
     cursor: pointer;
@@ -125,7 +124,6 @@
   border-radius: 25px;
   transition: 0.3s ease-in-out;
   position: relative;
-
   &:hover {
     border: 1px solid #2c36f0;
   }
@@ -217,7 +215,6 @@
         background-color: #edeefe;
         border-radius: 25px;
       }
-
       .positionImgBox {
         @include displayFlex($a: flex-end);
 
@@ -227,7 +224,6 @@
           object-fit: cover;
           border-radius: 50%;
         }
-
         .onlineIcon {
           width: 12px;
           height: 12px;

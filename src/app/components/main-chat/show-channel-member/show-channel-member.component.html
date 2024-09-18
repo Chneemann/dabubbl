@@ -30,7 +30,12 @@
             class="onlineIcon"
           />
         </div>
-        <h1>{{ user.firstName }} {{ user.lastName }}</h1>
+        <p>
+          {{ user.firstName }} {{ user.lastName }} @if
+          (this.userService.getCurrentUserId() === user.id) { ({{
+            "sidebar-direct-messages-user.you" | translate
+          }}) }
+        </p>
       </div>
       }
     </div>
