@@ -30,13 +30,13 @@
   ></app-emoji-picker>
   }
   <div class="emojiSection">
-    @for (reaction of getReaction(chat.id); track reaction; let i = $index) {
-    @if (reaction.id) {
+    @for (reaction of getReaction(chat.id); track reaction) { @if (reaction.id)
+    {
     <div
       class="emoji"
       [ngStyle]="{
         'background-color':
-          reaction.userId[i] == userService.getCurrentUserId() ? '#c7cafc' : ''
+          reaction.userId == userService.getCurrentUserId() ? '#c7cafc' : ''
       }"
       (click)="toggleEmoji(reaction.id)"
       (mousemove)="openDialog(reaction.id, $event)"
