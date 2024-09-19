@@ -32,7 +32,7 @@ export class ShowChannelMemberComponent {
   getSelectedUsers: User[] = [];
   selectedUsers: string[] = [];
   openUserWindowBoolean: boolean = false;
-  user: User[] = [];
+  users: User[] = [];
 
   @Input() getFiltertUsers!: User[];
   @Input() currentChannel!: string;
@@ -166,7 +166,7 @@ export class ShowChannelMemberComponent {
    * @returns {void}
    */
   openUserWindow(user: User) {
-    this.user = [user];
+    this.users = [user];
     this.openUserWindowBoolean = !this.openUserWindowBoolean;
   }
 

@@ -155,11 +155,10 @@
           dBlock: openUserWindowBoolean,
           dNone: !openUserWindowBoolean
         }"
-        [user]="user"
+        [users]="users"
         [openUserWindowBoolean]="openUserWindowBoolean"
         (closeUserWindow)="changeOpenUserWindowBoolean($event)"
       ></app-open-send-prv-message-window>
-      @if (!publicChannelsList.includes(currentChannel)) {
       <div class="leaveChannel">
         <button
           [disabled]="openEditNameInput || openEditNameDescription"
@@ -168,7 +167,6 @@
           {{ "channel-information.leave" | translate }}
         </button>
       </div>
-      }
     </div>
   </div>
 </div>

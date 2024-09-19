@@ -36,7 +36,7 @@ export class ChannelInformationComponent {
   descriptionValue: string = '';
   getCurrentChannel: Channel[] = [];
   openUserWindowBoolean: boolean = false;
-  user: User[] = [];
+  users: User[] = [];
   publicChannelsList: string[] = [];
 
   constructor(
@@ -145,7 +145,7 @@ export class ChannelInformationComponent {
    * @param {User} user - The user to display information about.
    */
   openUserWindow(user: User) {
-    this.user = [user];
+    this.users = [user];
     this.openUserWindowBoolean = !this.openUserWindowBoolean;
   }
 

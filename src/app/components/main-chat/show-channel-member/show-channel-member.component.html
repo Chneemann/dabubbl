@@ -132,7 +132,7 @@
 </section>
 <app-open-send-prv-message-window
   [ngClass]="{ dBlock: openUserWindowBoolean, dNone: !openUserWindowBoolean }"
-  [user]="user"
+  [users]="users"
   [openUserWindowBoolean]="openUserWindowBoolean"
   (closeUserWindow)="changeOpenUserWindowBoolean($event)"
 ></app-open-send-prv-message-window>

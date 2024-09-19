@@ -15,7 +15,7 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './open-send-prv-message-window.component.scss',
 })
 export class OpenSendPrvMessageWindowComponent {
-  @Input() user: User[] = [];
+  @Input() users: User[] = [];
   @Input() talkToUser: User[] = [];
   @Input() openUserWindowBoolean: boolean = false;
   @Input() showProfil: boolean = false;
