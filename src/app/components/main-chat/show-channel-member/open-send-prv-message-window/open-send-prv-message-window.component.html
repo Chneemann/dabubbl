@@ -35,10 +35,8 @@
       <div class="emailBox">
         <img src="./assets/img/mail-icon.svg" />
         <div class="email">
-          <p>{{ "open-send-prv-message.address" | translate }}</p>
-          <a href="mailto:wwweewefeff&#64;dede.de" target="_blank">{{
-            user.email
-          }}</a>
+          <p>E-Mail-Address</p>
+          <a href="mailto:{{ user.email }}" target="_blank">{{ user.email }}</a>
         </div>
       </div>
     </div>
@@ -83,10 +81,12 @@
         </div>
       </div>
     </div>
+    @if (this.userService.getCurrentUserId() !== user.id) {
     <button (click)="routeToUser(users)">
       <img src="./assets/img/messageIcon.svg" />
       {{ "open-send-prv-message.message" | translate }}
     </button>
+    }
   </div>
   } }
 </section>
