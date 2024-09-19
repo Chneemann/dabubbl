@@ -138,6 +138,10 @@ app-emoji-picker {
       background-color: #edeefe;
       border-radius: 25px;
     }
+    p {
+      font-size: 19px;
+      font-weight: 500;
+    }
     .positionImg {
       @include displayFlex($a: flex-end);
       .avatarImg {
@@ -190,6 +194,10 @@ app-emoji-picker {
     &:hover {
       background-color: #edeefe;
       border-radius: 25px;
+    }
+    p {
+      font-size: 19px;
+      font-weight: 500;
     }
     .positionImg2 {
       @include displayFlex($a: flex-end);

@@ -76,7 +76,8 @@
       <div class="filteredElementWindow">
         @if (toggleBoolean.selectUserInMsgBox) {
         <div class="positionOfAllUsersInBox">
-          @for(user of userService.getFiltertUsers; track user){
+          @for(user of userService.getFiltertUsers; track user) { @if (user.id
+          !== userService.getCurrentUserId()) {
           <div class="user" (click)="chooseUser(user)">
             <div class="positionImg">
               <img src="{{ user.avatar }}" class="avatarImg" />
@@ -87,9 +88,9 @@
                 class="onlineIcon"
               />
             </div>
-            <h1>{{ user.firstName }} {{ user.lastName }}</h1>
+            <p>{{ user.firstName }} {{ user.lastName }}</p>
           </div>
-          }
+          } }
         </div>
         }
       </div>
@@ -110,20 +111,21 @@
       @if (showChannels) { @for (i of checkIfUserHasAccessToChannel(); track
       $index) {
       <h3 class="user2" (click)="chooseElement(i)">{{ i.name }}</h3>
-      } }@else if (showUsers) { @for (i of userService.allUsers; track $index) {
-      <div class="user2" (click)="chooseElement(i)">
+      } }@else if (showUsers) { @for (user of userService.allUsers; track
+      $index) { @if (user.id !== userService.getCurrentUserId()) {
+      <div class="user2" (click)="chooseElement(user)">
         <div class="positionImg2">
-          <img src="{{ i.avatar }}" class="avatarImg2" />
+          <img src="{{ user.avatar }}" class="avatarImg2" />
           <img
             src="./assets/img/{{
-              i.status ? 'onlineRing.svg' : 'offlineRing.svg'
+              user.status ? 'onlineRing.svg' : 'offlineRing.svg'
             }}"
             class="onlineIconFilterWindow"
           />
         </div>
-        <h3>{{ i.firstName }} {{ i.lastName }}</h3>
+        <p>{{ user.firstName }} {{ user.lastName }}</p>
       </div>
-      } }
+      } } }
     </div>
     }
   </div>
