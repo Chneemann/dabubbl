@@ -25,8 +25,9 @@
       name="file"
       autocomplete="off"
       style="display: none"
-      (change)="onFileChange($event)"
+      (change)="handleFileSelection($event)"
       multiple
+      accept=".png,.gif,.jpg,.jpeg,.pdf,.doc,.docx,.mp3,.wav,.mp4,.wmv,.avi"
     />
   </div>
   <textarea

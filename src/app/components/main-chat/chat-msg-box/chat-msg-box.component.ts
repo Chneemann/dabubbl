@@ -169,8 +169,26 @@ export class ChatMsgBoxComponent {
       'video/x-ms-wmv': 4,
       'video/avi': 4,
     };
-
     return this.getFileIcons[fileTypeMap[fileInfo.type] ?? 5];
+  }
+
+  /**
+   * Processes the file selection and checks whether file types and file sizes meet the requirements.
+   * @param {Event} event - The file input change event that contains the uploaded files.
+   */
+  handleFileSelection(event: any) {
+    const files = event.target.files;
+    const maxSize = 1 * 1024 * 1024; // 3 MB in Bytes
+
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+
+      // Prüfen der Dateigröße
+      if (file.size > maxSize) {
+        this.fileSizeError = false;
+      }
+      this.fileSizeError = true;
+    }
   }
 
   /**
