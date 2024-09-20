@@ -9,6 +9,7 @@ import { SharedService } from '../../../service/shared.service';
 import { SmallBtnComponent } from '../buttons/small-btn/small-btn.component';
 import { LanguageService } from '../../../service/language.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -19,6 +20,7 @@ import { TranslateModule } from '@ngx-translate/core';
     SearchBarComponent,
     SmallBtnComponent,
     TranslateModule,
+    RouterLink,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
