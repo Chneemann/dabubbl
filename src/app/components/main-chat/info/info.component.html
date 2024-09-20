@@ -27,7 +27,11 @@
     <div class="imgBoxPrvChat">
       <img class="imgUserPrvChat" src="{{ user.avatar }}" />
     </div>
-    <p>{{ user.firstName }} {{ user.lastName }} (Du)</p>
+    <p>
+      {{ user.firstName }} {{ user.lastName }} ({{
+        "sidebar-direct-messages-user.you" | translate
+      }})
+    </p>
     }
   </div>
   <p>
