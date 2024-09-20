@@ -166,7 +166,8 @@
   },
 
   "sidebar-toggle": {
-    "openWorkspace": "Menü öffnen"
+    "openWorkspace": "Menü öffnen",
+    "closeWorkspace": "Menü schließen"
   },
 
   "edit-user-details": {

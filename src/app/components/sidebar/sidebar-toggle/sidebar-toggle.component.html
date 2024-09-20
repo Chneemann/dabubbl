@@ -1,6 +1,10 @@
 <section (click)="toggleSidebar()">
   <div class="menu">
     <img src="./assets/img/sidebar/toggle.svg" alt="" />
-    <p>{{ 'sidebar-toggle.openWorkspace' | translate }}</p>
+    @if (isSidebarOpen) {
+    <p>{{ "sidebar-toggle.openWorkspace" | translate }}</p>
+    } @else {
+    <p>{{ "sidebar-toggle.closeWorkspace" | translate }}</p>
+    }
   </div>
 </section>

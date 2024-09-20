@@ -12,21 +12,21 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class SidebarToggleComponent {
   @Input() viewWidth: number = 0;
+  isSidebarOpen: boolean = false;
 
   constructor(
     private chatService: ChatService,
     private toggleBoolean: ToggleBooleanService
   ) {}
 
-
   /**
    * Toggles the sidebar visibility and checks the view width.
    */
   toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
     this.toggleBoolean.isSidebarOpen = !this.toggleBoolean.isSidebarOpen;
     this.checkViewWidth();
   }
-
 
   /**
    * Checks the view width and adjusts sidebar and chat states accordingly.
@@ -34,6 +34,7 @@ export class SidebarToggleComponent {
   checkViewWidth() {
     if (this.viewWidth <= 1900 && this.chatService.isSecondaryChatOpen) {
       this.toggleBoolean.isSidebarOpen = true;
+      this.isSidebarOpen = true;
     }
     if (this.viewWidth <= 1900) {
       this.chatService.isSecondaryChatId = '';
